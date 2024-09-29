@@ -1,44 +1,238 @@
-- head: "Introduction"
-  desc: "Overview of the project."
+- head: Мастер кофе
+  desc: Лавка с кофе и десертами в торговом центре
   body:
-    - head: "Project Goals"
-      desc: "The primary objectives."
-      tags: ["main"]
-      body: "<p>The goals include improving performance and user engagement.</p>"
-    - head: "Scope"
-      desc: "Project boundaries and exclusions."
-      body:
-        - head: "In Scope"
-          desc: "What is included in the project."
-          tags: ["subsection"]
-          body: "<p>Feature A and Feature B are included.</p>"
-        - head: "Out of Scope"
-          body:
-            - head: "Excluded Features"
-              tags: ["subsection"]
-              body: "<p>Feature C is excluded from the project scope.</p>"
-- head: "Implementation"
-  desc: "How the project is executed."
+    - head: ""
+      desc: Сделать видеоролик с новинками для телевизора
+      tags: ["Разное"]
+      body: "Мастер кофе, меню"
+
+- head: Brain Rain Lab
   body:
-    - head: "Phase 1"
-      desc: "Initial phase focusing on research."
-      tags: ["main"]
-      body: "<p>Research on competitors and market analysis.</p>"
-    - head: "Phase 2"
-      desc: "Development phase."
-      body:
-        - head: "Frontend Development"
-          desc: "Building the user interface."
-          tags: ["subsection"]
-          body: "<p>React was used for the frontend.</p>"
-        - head: "Backend Development"
-          body:
-            - head: "API Design"
-              tags: ["subsection"]
-              body: "<p>REST API was designed using Node.js.</p>"
-            - head: "Database Setup"
-              body: "<p>MongoDB was chosen as the database.</p>"
-- head: "Conclusion"
-  desc: "Final remarks on the project."
-  tags: ["section"]
-  body: "<p>The project met all objectives and was completed on time.</p>"
+    - head: ""
+      tags: ["Сториз", "Тексты", "Хайлайтс"]
+      body: "Brain Rain Lab, хайлайтсы"
+    - head: ""
+      tags: ["Хайлайтс"]
+      body: "Brain Rain Lab, кружочки хайлайтсов"
+
+- head: Театр Алехандро
+  body:
+    - head: ""
+      tags: ["Посты в соцсети", "Рекламные креативы"]
+      body: "Я перестаю дышать, креативы"
+    - head: ""
+      tags: ["Сториз"]
+      body: "Бредущая, сториз"
+    - head: ""
+      tags: ["Хайлайтс"]
+      body: "Алехандро, кружочки"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Театр Алехандро, сайт (кроме «О нас»)"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Театр Алехандро, страничка «О нас»"
+
+- head: Вяткин
+  body:
+    - head: ""
+      tags: ["Сайт"]
+      body: "Вяткин без текстов"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Вяткин с текстами"
+    - head: ""
+      tags: ["Визитка"]
+      body: "Вяткин, визитка"
+
+- head: Март
+  body:
+    - head: ""
+      tags: ["Сайт"]
+      body: "Март без текстов"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Март с текстами"
+
+- head: Прокачу
+  body:
+    - head: ""
+      tags: ["Разное"]
+      body: "Прокачу, билет"
+
+- head: Гамаюн
+  body:
+    - head: ""
+      tags: ["Логотип"]
+      body: "Гамаюн"
+
+- head: Nidual
+  body:
+    - head: ""
+      tags: ["Логотип"]
+      body: "Nidual"
+
+- head: Театральный декабрь
+  body:
+    - head: ""
+      tags: ["Сториз"]
+      body: "Театральный декабрь"
+    - head: ""
+      tags: ["Посты в соцсети", "Рекламные креативы"]
+      body: "Театральный декабрь"
+    - head: ""
+      tags: ["Рассылка", "Сайт"]
+      body: "Театральный декабрь, рассылка"
+
+- head: Маленькая пекарня
+  body:
+    - head: ""
+      tags: ["Сториз"]
+      body: "Маленькая пекарня, сториз"
+    - head: ""
+      tags: ["Оформление ВК"]
+      body: "Маленькая пекарня, шапка вк"
+    - head: ""
+      tags: ["Рассылка", "Сайт"]
+      body: "Маленькая пекарня, рассылка"
+
+- head: Академия мата
+  body:
+    - head: ""
+      tags: ["Посты в соцсети"]
+      body: "Академия, инсты из ноушена"
+    - head: ""
+      tags: ["Посты в соцсети", "Тексты"]
+      body: "Академия, посты с текстами"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Академия, сайт с текстами"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Академия, сайт без текстов"
+    - head: ""
+      tags: ["Обработка фото"]
+      body: "Академия, обработка фото"
+
+- head: Исказители
+  body:
+    - head: ""
+      tags: ["Обработка фото"]
+      body: "Исказители, обработка фото (как минимум, главная)"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Исказители, сайт без текстов"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Исказители, сайт с текстами"
+
+- head: Война и мир
+  body:
+    - head: ""
+      tags: ["Рекламные креативы", "Сториз"]
+      body: "Война и мир, видео с барашем"
+    - head: ""
+      tags: ["Сториз", "Хайлайтс"]
+      body: "Война и мир, хайлайтсы"
+
+- head: Лёха
+  body:
+    - head: ""
+      tags: ["Сториз", "Хайлайтс"]
+      body: "Лёха, хайлайтсы"
+    - head: ""
+      tags: ["Рекламные креативы", "Сториз"]
+      body: "Лёха, 4 сториза с Яндекс диска"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Лёха, лендинг без текстов"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Лёха, лендинг с текстами"
+    - head: ""
+      tags: ["Обработка фото"]
+      body: "Лёха, обработка фото"
+
+- head: Горилла
+  body:
+    - head: ""
+      tags: ["Посты в соцсети", "Рекламные креативы"]
+      body: "Горилла, посты (подобрать из фигмы)"
+    - head: ""
+      tags: ["Рекламные креативы", "Сториз"]
+      body: "Горилла, сторизы (подобрать из фигмы)"
+    - head: ""
+      tags: ["Сториз", "Хайлайтс"]
+      body: "Горилла, хайлайтсы"
+    - head: ""
+      tags: ["Рекламные креативы", "Яндекс Директ"]
+      body: "Горилла, Антоха об пол"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Горилла, сайт без текстов"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Горилла, сайт с текстами"
+
+- head: Жирные
+  body:
+    - head: ""
+      tags: ["Сайт"]
+      body: "Жирные, лендинг (кадры без моего текта)"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Жирные, лендинг (первые два экрана с моим текстом)"
+    - head: ""
+      tags: ["Разное"]
+      body: "Жирные, наклейки"
+    - head: ""
+      tags: ["Посты в соцсети", "Тексты"]
+      body: "Жирные, креативы с текстами"
+    - head: ""
+      tags: ["Посты в соцсети"]
+      body: "Жирные, креативы без текстов"
+    - head: ""
+      tags: []
+      body: "Жирные, заставка с биханса"
+    - head: ""
+      tags: ["Оформление ВК"]
+      body: "Жирные, обложка вк"
+
+- head: Вау дед!
+  body:
+    - head: ""
+      tags: ["Хайлайтс"]
+      body: "Ваудед, кружочки"
+    - head: ""
+      tags: ["Сториз", "Тексты", "Хайлайтс"]
+      body: "Ваудед, хайлайтс (кроме кружочков)"
+    - head: ""
+      tags: ["Посты в соцсети", "Рекламные креативы"]
+      body: "Ваудед, посты + креативы без текстов"
+    - head: ""
+      tags: ["Посты в соцсети", "Рекламные креативы", "Тексты"]
+      body: "Ваудед, посты + креативы с текстами"
+    - head: ""
+      tags: ["Сториз"]
+      body: "Ваудед, сторизы"
+    - head: ""
+      tags: ["Обработка фото"]
+      body: "Ваудед, обработка фото"
+    - head: ""
+      tags: ["Сайт", "Тексты"]
+      body: "Ваудед, лендинг с текстами"
+    - head: ""
+      tags: ["Сайт"]
+      body: "Ваудед, лендинг без текстов"
+
+- head: Фотограф Яков
+  body:
+    - head: ""
+      tags: ["Оформление ВК"]
+      body: "Яша, обложка вк"
+    - head: ""
+      tags: ["Хайлайтс"]
+      body: "Яша, кружочки инста"
+    - head: ""
+      tags: ["Сториз", "Тексты", "Хайлайтс"]
+      body: "Яша, хайлайтсы (кроме кружочков)"
