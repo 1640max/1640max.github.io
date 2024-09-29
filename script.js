@@ -73,7 +73,6 @@ function handleTagChange(skeleton) {
   renderPage(skeleton, selectedTags);
 }
 
-
 async function initPage() {
   const response = await fetch('/data.yml');
   const yamlData = await response.text();
@@ -90,4 +89,4 @@ async function initPage() {
   });
 }
 
-initPage();
+document.addEventListener("DOMContentLoaded", initPage);
