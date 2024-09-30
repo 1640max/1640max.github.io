@@ -1,6 +1,6 @@
 // Function to build HTML recursively, filtering based on tags
 function buildSection(node, selectedTags, headingLevel = 2) {
-
+  var converter = new showdown.Converter(); // Markdown to HTML
   let body;
 
   // If the body is a string, it's a terminating node
@@ -10,7 +10,7 @@ function buildSection(node, selectedTags, headingLevel = 2) {
       // Node is relevant, so create HTML for it
       body = document.createElement('div');
       body.classList.add('microcase-body');
-      body.innerHTML = node.body;
+      body.innerHTML = converter.makeHtml(node.body);
     } else {
       return null; // Node is not relevant, skip it
     }
@@ -45,7 +45,7 @@ function buildSection(node, selectedTags, headingLevel = 2) {
   
   if (node.desc) {
     const description = document.createElement('p');
-    description.textContent = node.desc;
+    description.innerHTML = converter.makeHtml(node.desc);
     section.appendChild(description);
   }
 
