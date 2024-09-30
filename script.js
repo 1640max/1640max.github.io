@@ -9,6 +9,7 @@ function buildSection(node, selectedTags, headingLevel = 2) {
     if (!selectedTags.length || (node.tags && node.tags.some(tag => selectedTags.includes(tag)))) {
       // Node is relevant, so create HTML for it
       body = document.createElement('div');
+      body.classList.add('microcase-body');
       body.innerHTML = node.body;
     } else {
       return null; // Node is not relevant, skip it
@@ -26,13 +27,15 @@ function buildSection(node, selectedTags, headingLevel = 2) {
     if (!relevantChildren.length) {
       return null;
     } else {
-      body = document.createElement('section');
+      body = document.createElement('div');
+      body.classList.add('node-body');
       relevantChildren.forEach(child => body.appendChild(child));
     }
   }
 
   // Create section and add heading, description, and body
-  const section = document.createElement('section');
+  const section = document.createElement('div');
+  section.classList.add('node');
 
   if (node.head) {
     const heading = document.createElement(`h${headingLevel}`);
