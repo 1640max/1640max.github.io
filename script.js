@@ -56,7 +56,7 @@ function buildSection(node, selectedTags, headingLevel = 2) {
 
 // Function to render the YAML data into the DOM
 function renderPage(data, selectedTags) {
-  const contentDiv = document.getElementById('content');
+  const contentDiv = document.querySelector('.content');
   contentDiv.innerHTML = ''; // Clear existing content
 
   data.forEach(node => {
