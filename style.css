@@ -1,12 +1,5 @@
-.content {
-  max-width: 600px;
-  margin-inline: auto;
-}
-
-.microcase-body {
-  font-style: italic;
-  background-color: #eee;
-  padding: 1rem;
+body {
+  font-size: 24px;
 }
 
 .h2, .h3, .h4, .h5, .h6 {
@@ -15,4 +8,26 @@
 
 p {
   margin-block: .5rem;
+}
+
+.content {
+  margin-inline: 3rem;
+}
+
+.terminating .body {
+  font-style: italic;
+  background-color: #eee;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.terminating.node {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.terminating.node .body {
+  grid-column: 2;
 }
