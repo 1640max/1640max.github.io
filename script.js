@@ -9,7 +9,7 @@ function buildSection(node, selectedTags, headingLevel = 2) {
     if (!selectedTags.length || (node.tags && node.tags.some(tag => selectedTags.includes(tag)))) {
       // Node is relevant, so create HTML for it
       body = document.createElement('div');
-      body.classList.add('microcase-body');
+      body.classList.add('body');
       body.innerHTML = converter.makeHtml(node.body);
     } else {
       return null; // Node is not relevant, skip it
@@ -28,24 +28,25 @@ function buildSection(node, selectedTags, headingLevel = 2) {
       return null;
     } else {
       body = document.createElement('div');
-      body.classList.add('node-body');
+      body.classList.add('body');
       relevantChildren.forEach(child => body.appendChild(child));
     }
   }
 
   // Create section and add heading, description, and body
   const section = document.createElement('div');
+  isTerminating && section.classList.add('terminating');
   section.classList.add('node');
 
   if (node.head) {
     const heading = document.createElement(`h${headingLevel}`);
-    heading.classList.add(`h${headingLevel}`);
+    heading.classList.add('heading', `h${headingLevel}`);
     heading.textContent = node.head;
     section.appendChild(heading);
   }
   
   if (node.desc) {
-    const description = document.createElement('p');
+    const description = document.createElement('div');
     description.classList.add('description');
     description.innerHTML = converter.makeHtml(node.desc);
     // TODO: Fix redundant <p>
