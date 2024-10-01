@@ -26,6 +26,11 @@ p {
   grid-auto-flow: column;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
+  margin: 0;
+}
+
+.terminating .info {
+  margin: 3rem 0 0;
 }
 
 .terminating.node .body {
