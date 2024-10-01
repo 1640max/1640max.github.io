@@ -1,7 +1,7 @@
+// Markdown to HTML converter
+var converter = new showdown.Converter({parseImgDimensions: true});
+
 function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
-  // Markdown to HTML converter
-  // TODO: Make it global outta function
-  const converter = new showdown.Converter({parseImgDimensions: true});
   // Node body
   let body;
   // Is the node terminating
