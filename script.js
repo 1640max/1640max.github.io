@@ -1,61 +1,65 @@
-// Function to build HTML recursively, filtering based on tags
-function buildSection(node, selectedTags, headingLevel = 2) {
-  var converter = new showdown.Converter({parseImgDimensions: true}); // Markdown to HTML
+function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
+  // Markdown to HTML converter
+  // TODO: Make it global outta function
+  const converter = new showdown.Converter({parseImgDimensions: true});
+  // Node body
   let body;
+  // Is the node terminating
+  const isTerminating = (typeof nodeJSON.body === 'string');
 
-  // If the body is a string, it's a terminating node
-  if (typeof node.body === 'string') {
-    // If a terminating node has no tags it's never relevant.
-    if (!selectedTags.length || (node.tags && node.tags.some(tag => selectedTags.includes(tag)))) {
-      // Node is relevant, so create HTML for it
+  // We have to manage node's head, desc, and body. Let's start with the body.
+  if (isTerminating) {
+    // If the node is relevant
+    // At least 1 tag is selected || (node has tags && at least one matches selected ones)
+    if (!selectedTags.length || (nodeJSON.tags && nodeJSON.tags.some(tag => selectedTags.includes(tag)))) {
+      // Since node is relevant, render its body
       body = document.createElement('div');
       body.classList.add('body');
-      body.innerHTML = converter.makeHtml(node.body);
+      body.innerHTML = converter.makeHtml(nodeJSON.body);
     } else {
-      return null; // Node is not relevant, skip it
+      // Since node is not relevant, skip it
+      return null;
     }
-  } 
-  
-  // If the body is an array, it's a recursive node, so process children
-  else {
+  } else {
+    // Array to collect rendered children nodes that contain relevant terminating nodes
     let relevantChildren = [];
-    node.body.forEach(childNode => {
-      const childSection = buildSection(childNode, selectedTags, headingLevel + 1);
+    nodeJSON.body.forEach(childNode => {
+      const childSection = buildNode(childNode, selectedTags, headingLevel + 1);
       childSection && relevantChildren.push(childSection);
     });
-    // If there are no relevant children, return null to skip this section
-    if (!relevantChildren.length) {
-      return null;
-    } else {
+    // If there is at least 1 relevant child then push it to the node body
+    if (relevantChildren.length) {
       body = document.createElement('div');
       body.classList.add('body');
       relevantChildren.forEach(child => body.appendChild(child));
+    } else {
+      // Skip this node
+      return null;
     }
   }
 
-  // Create section and add heading, description, and body
-  const section = document.createElement('div');
-  isTerminating && section.classList.add('terminating');
-  section.classList.add('node');
+  // Body is ready, node's head and desc remain
+  const node = document.createElement('div');
+  isTerminating && node.classList.add('terminating');
+  node.classList.add('node');
 
-  if (node.head) {
+  if (nodeJSON.head) {
     const heading = document.createElement(`h${headingLevel}`);
     heading.classList.add('heading', `h${headingLevel}`);
-    heading.textContent = node.head;
-    section.appendChild(heading);
+    heading.textContent = nodeJSON.head;
+    node.appendChild(heading);
   }
   
-  if (node.desc) {
+  if (nodeJSON.desc) {
     const description = document.createElement('div');
     description.classList.add('description');
-    description.innerHTML = converter.makeHtml(node.desc);
-    // TODO: Fix redundant <p>
-    section.appendChild(description);
+    description.innerHTML = converter.makeHtml(nodeJSON.desc);
+    node.appendChild(description);
   }
 
-  section.appendChild(body);
+  node.appendChild(body);
 
-  return section;
+  return node;
 }
 
 // Function to render the YAML data into the DOM
@@ -63,9 +67,9 @@ function renderPage(data, selectedTags) {
   const contentDiv = document.querySelector('.content');
   contentDiv.innerHTML = ''; // Clear existing content
 
-  data.forEach(node => {
-    const section = buildSection(node, selectedTags);
-    section && contentDiv.appendChild(section);
+  data.forEach(nodeJSON => {
+    const node = buildNode(nodeJSON, selectedTags);
+    node && contentDiv.appendChild(node);
   });
 }
 
