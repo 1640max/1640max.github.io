@@ -48,7 +48,8 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     node.classList.add('terminating');
     info = document.createElement('figcaption');
   } else {
-    node = document.createElement('div');
+    node = nodeJSON.head ? document.createElement('section')
+                         : document.createElement('div');
     info = document.createElement('header');
   }
   node.classList.add('node');
