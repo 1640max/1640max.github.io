@@ -38,32 +38,38 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     }
   }
 
-  // Body is ready, node's head and desc remain
-  const node = document.createElement('div');
-  isTerminating && node.classList.add('terminating');
+  // Body is ready, node's head and desc remain. 
+
+  let node, // div or figure
+      info; // header or figcaption
+  
+  if (isTerminating) {
+    node = document.createElement('figure');
+    node.classList.add('terminating');
+    info = document.createElement('figcaption');
+  } else {
+    node = document.createElement('div');
+    info = document.createElement('header');
+  }
   node.classList.add('node');
+  info.classList.add('info');
+
+  if (nodeJSON.head) {
+    const heading = document.createElement(`h${headingLevel}`);
+    heading.classList.add('heading', `h${headingLevel}`);
+    heading.textContent = nodeJSON.head;
+    info.appendChild(heading);
+  }
+  
+  if (nodeJSON.desc) {
+    const description = document.createElement('div');
+    description.classList.add('description');
+    description.innerHTML = converter.makeHtml(nodeJSON.desc);
+    info.appendChild(description);
+  }
 
   // Putting them in a header element, if at least 1 exists
-  if (nodeJSON.head || nodeJSON.desc) {
-    const header = document.createElement('header');
-    header.classList.add('header');
-
-    if (nodeJSON.head) {
-      const heading = document.createElement(`h${headingLevel}`);
-      heading.classList.add('heading', `h${headingLevel}`);
-      heading.textContent = nodeJSON.head;
-      header.appendChild(heading);
-    }
-    
-    if (nodeJSON.desc) {
-      const description = document.createElement('div');
-      description.classList.add('description');
-      description.innerHTML = converter.makeHtml(nodeJSON.desc);
-      header.appendChild(description);
-    }
-
-    node.appendChild(header);
-  }
+  if (nodeJSON.head || nodeJSON.desc) { node.appendChild(info) }
 
   node.appendChild(body);
 
