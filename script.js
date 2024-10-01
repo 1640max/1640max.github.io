@@ -43,18 +43,26 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
   isTerminating && node.classList.add('terminating');
   node.classList.add('node');
 
-  if (nodeJSON.head) {
-    const heading = document.createElement(`h${headingLevel}`);
-    heading.classList.add('heading', `h${headingLevel}`);
-    heading.textContent = nodeJSON.head;
-    node.appendChild(heading);
-  }
-  
-  if (nodeJSON.desc) {
-    const description = document.createElement('div');
-    description.classList.add('description');
-    description.innerHTML = converter.makeHtml(nodeJSON.desc);
-    node.appendChild(description);
+  // Putting them in a header element, if at least 1 exists
+  if (nodeJSON.head || nodeJSON.desc) {
+    const header = document.createElement('header');
+    header.classList.add('header');
+
+    if (nodeJSON.head) {
+      const heading = document.createElement(`h${headingLevel}`);
+      heading.classList.add('heading', `h${headingLevel}`);
+      heading.textContent = nodeJSON.head;
+      header.appendChild(heading);
+    }
+    
+    if (nodeJSON.desc) {
+      const description = document.createElement('div');
+      description.classList.add('description');
+      description.innerHTML = converter.makeHtml(nodeJSON.desc);
+      header.appendChild(description);
+    }
+
+    node.appendChild(header);
   }
 
   node.appendChild(body);
