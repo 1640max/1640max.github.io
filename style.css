@@ -50,8 +50,8 @@ p {
 
 .node_terminating .node__caption {
   position: sticky;
-  top: 100px;
-  bottom: 100px;
+  bottom: 50px;
+  align-self: end;
   height: min-content;
   margin: 3rem 0;
 }
