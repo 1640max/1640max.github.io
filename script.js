@@ -14,7 +14,7 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     if (!selectedTags.length || (nodeJSON.tags && nodeJSON.tags.some(tag => selectedTags.includes(tag)))) {
       // Since node is relevant, render its body
       body = document.createElement('div');
-      body.classList.add('body');
+      body.classList.add('node__body');
       body.innerHTML = converter.makeHtml(nodeJSON.body);
     } else {
       // Since node is not relevant, skip it
@@ -30,7 +30,7 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     // If there is at least 1 relevant child then push it to the node body
     if (relevantChildren.length) {
       body = document.createElement('div');
-      body.classList.add('body');
+      body.classList.add('node__body');
       relevantChildren.forEach(child => body.appendChild(child));
     } else {
       // Skip this node
@@ -41,36 +41,36 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
   // Body is ready, node's head and desc remain. 
 
   let node, // div or figure
-      info; // header or figcaption
+      caption; // header or figcaption
   
   if (isTerminating) {
     node = document.createElement('figure');
-    node.classList.add('terminating');
-    info = document.createElement('figcaption');
+    node.classList.add('node_terminating');
+    caption = document.createElement('figcaption');
   } else {
     node = nodeJSON.head ? document.createElement('section')
                          : document.createElement('div');
-    info = document.createElement('header');
+    caption = document.createElement('header');
   }
   node.classList.add('node');
-  info.classList.add('info');
+  caption.classList.add('node__caption');
 
   if (nodeJSON.head) {
     const heading = document.createElement(`h${headingLevel}`);
-    heading.classList.add('heading', `h${headingLevel}`);
+    heading.classList.add('node__heading', `h${headingLevel}`);
     heading.textContent = nodeJSON.head;
-    info.appendChild(heading);
+    caption.appendChild(heading);
   }
   
   if (nodeJSON.desc) {
     const description = document.createElement('div');
-    description.classList.add('description');
+    description.classList.add('node__description');
     description.innerHTML = converter.makeHtml(nodeJSON.desc);
-    info.appendChild(description);
+    caption.appendChild(description);
   }
 
   // Putting them in a header element, if at least 1 exists
-  if (nodeJSON.head || nodeJSON.desc) { node.appendChild(info) }
+  if (nodeJSON.head || nodeJSON.desc) { node.appendChild(caption) }
 
   node.appendChild(body);
 
