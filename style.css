@@ -1,9 +1,35 @@
 body {
   font-size: 24px;
+  font-family: monospace;
 }
 
 .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0;
+}
+
+.h2 {
+  font-size: 90px;
+/*   max-width: 13em; */
+}
+
+.h3 {
+  font-size: 60px;
+/*   max-width: 16em; */
+}
+
+.h2:before {
+  content: "# ";
+  margin-right: -.3em;
+}
+
+.h3:before {
+  content: "## ";
+  margin-right: -.3em;
+}
+
+.h4:before {
+  content: "### ";
+  margin-right: -.3em;
 }
 
 p {
@@ -29,10 +55,15 @@ p {
   margin: 0;
 }
 
-.terminating .info {
-  margin: 3rem 0 0;
+  position: sticky;
+  top: 100px;
+  bottom: 100px;
+  height: min-content;
+  margin: 3rem 0;
 }
 
-.terminating.node .body {
-  grid-column: 2;
+
+/* Выравнивание тела микрокейса */
+.node__body > p {
+   text-align: right;
 }
