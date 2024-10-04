@@ -43,7 +43,7 @@ p {
 .node_terminating {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 2fr;
+  grid-auto-columns: 3fr 2fr;
   gap: 2rem;
   margin: 0;
 }
@@ -62,6 +62,11 @@ p {
   padding: 1rem;
   margin-block: 1rem;
   grid-column: 1;
+}
+
+.node_terminating .node__body_no-caption {
+  justify-self: center;
+  max-width: 60%;
 }
 
 /* Выравнивание тела микрокейса */

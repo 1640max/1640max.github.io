@@ -46,6 +46,9 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
   if (isTerminating) {
     node = document.createElement('figure');
     node.classList.add('node_terminating');
+    if (!nodeJSON.head && !nodeJSON.desc) {
+      body.classList.add('node__body_no-caption')
+    }
     caption = document.createElement('figcaption');
   } else {
     node = nodeJSON.head ? document.createElement('section')
