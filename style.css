@@ -20,16 +20,19 @@ body {
 .h2:before {
   content: "# ";
   margin-right: -.3em;
+  font-weight: 100;
 }
 
 .h3:before {
   content: "## ";
   margin-right: -.3em;
+  font-weight: 100;
 }
 
 .h4:before {
   content: "### ";
   margin-right: -.3em;
+  font-weight: 100;
 }
 
 p {
