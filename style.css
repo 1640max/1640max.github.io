@@ -58,7 +58,6 @@ p {
 
 .node_terminating .node__body {
   font-style: italic;
-  background-color: #eee;
   padding: 1rem;
   margin-block: 1rem;
   grid-column: 1;
@@ -67,6 +66,10 @@ p {
 .node_terminating .node__body_no-caption {
   justify-self: center;
   max-width: 60%;
+}
+
+.node_terminating .node__body img {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Выравнивание тела микрокейса */
