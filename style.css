@@ -79,3 +79,8 @@ p {
 .node__body > p {
    text-align: right;
 }
+
+.vimeo {
+  width: 1080px;
+  height: 608px;
+}
