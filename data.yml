@@ -83,6 +83,9 @@
       desc: Необходимо было выделиться среди огромного количества рекламы конкурентов.
       body:
       - desc:
+        tags: ["Сториз"]
+        body: "![Брендинг для «Вау, дед!»](cases/wowded/stories.png =100%x*)"
+      - desc:
         tags: ["Посты в соцсети", "Рекламные креативы"]
         body: >
           ![Брендинг для «Вау, дед!»](cases/wowded/posts-mockup.png =100%x*)
@@ -96,20 +99,24 @@
       - desc:
         tags: ["Посты в соцсети"]
         body: "![Брендинг для «Вау, дед!»](cases/wowded/posts2.png =100%x*)"
-      - desc:
-        tags: ["Сториз"]
-        body: "![Брендинг для «Вау, дед!»](cases/wowded/stories.png =100%x*)"
     - desc:
       tags: ["Обработка фото"]
       body: "Ваудед, обработка фото"
-    - head: Лендинг
+    - head: Сайт
+      desc: Лендинг
       body:
       - desc:
+        tags: ["Сайт"]
+        body: "![Сайт для «Вау, дед!»](cases/wowded/site-header.png =100%x*)"
+      - desc: Тут балаболство про тексты
         tags: ["Сайт", "Тексты"]
-        body: "Ваудед, лендинг с текстами"
+        body: "Ваудед, скрины экранов лендинга с текстами"
       - desc:
         tags: ["Сайт"]
-        body: "Ваудед, лендинг без текстов"
+        body: >
+          <iframe class="vimeo" src="https://player.vimeo.com/video/767227997?h=54a8e6cac9&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+          <iframe class="vimeo" src="https://player.vimeo.com/video/765223210?h=132c3f3f1a&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+          <iframe class="vimeo" src="https://player.vimeo.com/video/767234540?h=0baeba0068&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
 
 - head: Мастер кофе
   desc: Лавка с кофе и десертами в торговом центре
