@@ -118,6 +118,52 @@
           <iframe class="vimeo" src="https://player.vimeo.com/video/765223210?h=132c3f3f1a&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
           <iframe class="vimeo" src="https://player.vimeo.com/video/767234540?h=0baeba0068&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
 
+- head: Треш-спектакль «Четыре жирных УЁ...»
+  body:
+    - body: <iframe class="vimeo" src="https://player.vimeo.com/video/811811665?h=82338b3484&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+    - desc:
+      tags: ["Разное"]
+      body: "Жирные, наклейки"
+    - head: Оформление соцсетей и реклама
+      body:
+      - desc:
+        tags: ["Оформление ВК"]
+        body: "![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/vk-cover.jpg =100%x*)"
+      - desc:
+        tags: ["Сториз", "Рекламные креативы"]
+        body: >
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-1.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-2.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-3.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-4.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-5.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/stories-6.png)
+      - desc:
+        tags: ["Посты в соцсети", "Рекламные креативы"]
+        body:  >
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-1.png)<br>
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-2.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-3.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-4.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-5.png)
+      - desc:
+        tags: ["Посты в соцсети", "Тексты"]
+        body:  >
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-1.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-2.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-3.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-4.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-5.png)
+          ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/posts-text-6.png)
+    - head: Сайт
+      body:
+      - desc:
+        tags: ["Сайт"]
+        body: "![Лендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/website.png)"
+      - desc: # TODO: разбить и добавить
+        tags: ["Сайт", "Тексты"]
+        body: "Жирные, лендинг (первые два экрана с моим текстом)"
+
 - head: Мастер кофе
   desc: Лавка с кофе и десертами в торговом центре
   body:
@@ -280,27 +326,3 @@
     - desc:
       tags: ["Сайт", "Тексты"]
       body: "Горилла, сайт с текстами"
-
-- head: Жирные
-  body:
-    - desc:
-      tags: ["Сайт"]
-      body: "Жирные, лендинг (кадры без моего текта)"
-    - desc:
-      tags: ["Сайт", "Тексты"]
-      body: "Жирные, лендинг (первые два экрана с моим текстом)"
-    - desc:
-      tags: ["Разное"]
-      body: "Жирные, наклейки"
-    - desc:
-      tags: ["Посты в соцсети", "Тексты"]
-      body: "Жирные, креативы с текстами"
-    - desc:
-      tags: ["Посты в соцсети"]
-      body: "Жирные, креативы без текстов"
-    - desc:
-      tags: []
-      body: "Жирные, заставка с биханса"
-    - desc:
-      tags: ["Оформление ВК"]
-      body: "Жирные, обложка вк"
