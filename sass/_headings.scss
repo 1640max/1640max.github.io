@@ -12,20 +12,16 @@
 /*   max-width: 16em; */
 }
 
-.h2:before {
-  content: "# ";
-  margin-right: -.3em;
-  font-weight: 100;
+%heading-before {
+  margin-right: .3em;
+  font-weight: 200;
 }
 
-.h3:before {
-  content: "## ";
-  margin-right: -.3em;
-  font-weight: 100;
-}
+$hashes: ("#", "##", "###", "####", "#####");
 
-.h4:before {
-  content: "### ";
-  margin-right: -.3em;
-  font-weight: 100;
+@for $i from 2 through 6 {
+  .h#{$i}:before {
+    @extend %heading-before;
+    content: nth($hashes, $i - 1);
+  }
 }
