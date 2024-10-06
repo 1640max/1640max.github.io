@@ -1,0 +1,30 @@
+.node_terminating {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 3fr 2fr;
+  gap: 2rem;
+  margin: 0;
+}
+
+.node_terminating .node__caption {
+  position: sticky;
+  bottom: 50px;
+  align-self: end;
+  height: min-content;
+  margin: 3rem 0;
+}
+
+.node_terminating .node__body {
+  font-style: italic;
+  margin-block: 1rem;
+  grid-column: 1;
+}
+
+.node_terminating .node__body_no-caption {
+  justify-self: center;
+}
+
+.node_terminating .node__body img {
+  width: 100%;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+}

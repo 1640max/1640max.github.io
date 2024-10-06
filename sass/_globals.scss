@@ -1,0 +1,23 @@
+.body {
+  font-size: 24px;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-block: .5rem;
+}
+
+.content {
+  /* padding-inline: 3rem; */
+  width: 100%;
+  max-width: 1700px;
+  margin-inline: auto;
+}
+
+.vimeo {
+  width: 1080px;
+  height: 608px;
+  display: none;
+}
