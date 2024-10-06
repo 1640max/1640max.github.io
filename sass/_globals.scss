@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 // Брейкпоинты
 $sm: 576px;
 $md: 768px;
@@ -7,8 +9,7 @@ $xxl: 1400px;
 $xxxl: 1920px;
 
 .body {
-  font-size: 24px;
-  font-family: monospace;
+  font: 16px "JetBrains Mono", monospace;
   margin: 0;
   padding: 0;
 }
