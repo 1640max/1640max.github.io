@@ -15,10 +15,12 @@ showdown.extension("remove-p-from-img", function () {
   ];
 });
 
-// Markdown to HTML converter with an extension and a parameter
+// Markdown to HTML converter with extensions and parameters
 var converter = new showdown.Converter({
   extensions: ["remove-p-from-img"],
-  parseImgDimensions: true
+  parseImgDimensions: true,
+  openLinksInNewWindow: true,
+  simpleLineBreaks: true,
 });
 
 function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
