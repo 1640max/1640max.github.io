@@ -1,20 +1,29 @@
+@use "globals" as *;
+
 .h2, .h3, .h4, .h5, .h6 {
+  //font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 0;
 }
 
 .h2 {
-  font-size: 90px;
-/*   max-width: 13em; */
+  font-size: 2.5rem;
+  font-weight: 750;
+  line-height: 1.25em;
+  letter-spacing: -.03em;
+  @media (min-width: $lg) { font-size: 90px; }
 }
 
 .h3 {
-  font-size: 60px;
-/*   max-width: 16em; */
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.25em;
+  @media (min-width: $lg) { font-size: 60px; }
 }
 
 %heading-before {
   margin-right: .3em;
-  font-weight: 200;
+  font-weight: 300;
+  letter-spacing: .01em;
 }
 
 $hashes: ("#", "##", "###", "####", "#####");
