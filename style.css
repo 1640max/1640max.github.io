@@ -75,15 +75,6 @@ p {
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Выравнивание тела микрокейса */
-.node__body > p {
-   text-align: right;
-}
-
-.node__body_no-caption > p {
-  text-align: center;
-}
-
 .vimeo {
   width: 1080px;
   height: 608px;
