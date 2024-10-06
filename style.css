@@ -1,6 +1,8 @@
-body {
+.body {
   font-size: 24px;
   font-family: monospace;
+  margin: 0;
+  padding: 0;
 }
 
 .h2, .h3, .h4, .h5, .h6 {
@@ -40,7 +42,10 @@ p {
 }
 
 .content {
-  margin-inline: 3rem;
+  /* padding-inline: 3rem; */
+  width: 100%;
+  max-width: 1700px;
+  margin-inline: auto;
 }
 
 .node_terminating {
@@ -61,21 +66,21 @@ p {
 
 .node_terminating .node__body {
   font-style: italic;
-  padding: 1rem;
   margin-block: 1rem;
   grid-column: 1;
 }
 
 .node_terminating .node__body_no-caption {
   justify-self: center;
-  max-width: 60%;
 }
 
 .node_terminating .node__body img {
+  width: 100%;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .vimeo {
   width: 1080px;
   height: 608px;
+  display: none;
 }
