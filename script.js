@@ -26,89 +26,78 @@ var converter = new showdown.Converter({
 
 function buildContent(data, selectedTags, headingLevel = 2) {
   const result = document.createDocumentFragment();
-  
+
   data.forEach(nodeJSON => {
-    const node = buildNode(nodeJSON, selectedTags, headingLevel);
-    node && result.appendChild(node);
+    let body;
+    const isTerminating = (typeof nodeJSON.body === 'string');
+    let node, caption;
+
+    // Handle terminating node
+    if (isTerminating) {
+      if (!selectedTags.length || (nodeJSON.tags && nodeJSON.tags.some(tag => selectedTags.includes(tag)))) {
+        body = document.createElement('div');
+        body.classList.add('node__body');
+        body.innerHTML = converter.makeHtml(nodeJSON.body);
+      } else {
+        return; // Skip node if not relevant
+      }
+    } else {
+      // Recursively build children
+      let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
+      if (relevantChildren) {
+        body = document.createElement('div');
+        body.classList.add('node__body');
+        body.appendChild(relevantChildren);
+      } else {
+        return; // Skip node if it has no relevant children
+      }
+    }
+
+    // Create node element
+    if (isTerminating) {
+      node = document.createElement('figure');
+      node.classList.add('node_terminating');
+      if (!nodeJSON.head && !nodeJSON.desc) {
+        body.classList.add('node__body_no-caption');
+      }
+      caption = document.createElement('figcaption');
+    } else {
+      node = nodeJSON.head ? document.createElement('section')
+                           : document.createElement('div');
+      caption = document.createElement('header');
+    }
+    node.classList.add('node');
+    caption.classList.add('node__caption');
+
+    // Add heading if present
+    if (nodeJSON.head) {
+      const heading = document.createElement(`h${headingLevel}`);
+      heading.classList.add('node__heading', `h${headingLevel}`);
+      heading.textContent = nodeJSON.head;
+      caption.appendChild(heading);
+    }
+
+    // Add description if present
+    if (nodeJSON.desc) {
+      const description = document.createElement('div');
+      description.classList.add('node__description');
+      description.innerHTML = converter.makeHtml(nodeJSON.desc);
+      caption.appendChild(description);
+    }
+
+    // Append caption and body to the node
+    if (nodeJSON.head || nodeJSON.desc) {
+      node.appendChild(caption);
+    }
+    node.appendChild(body);
+
+    // Append the node to the result
+    result.appendChild(node);
   });
 
   return result;
 }
 
-function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
-  // Node body
-  let body;
-  // Is the node terminating
-  const isTerminating = (typeof nodeJSON.body === 'string');
-
-  // We have to manage node's head, desc, and body. Let's start with the body.
-  if (isTerminating) {
-    // If the node is relevant
-    // At least 1 tag is selected || (node has tags && at least one matches selected ones)
-    if (!selectedTags.length || (nodeJSON.tags && nodeJSON.tags.some(tag => selectedTags.includes(tag)))) {
-      // Since node is relevant, render its body
-      body = document.createElement('div');
-      body.classList.add('node__body');
-      body.innerHTML = converter.makeHtml(nodeJSON.body);
-    } else {
-      // Since node is not relevant, skip it
-      return null;
-    }
-  } else {
-    // Array to collect rendered children nodes that contain relevant terminating nodes
-    let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
-    // If there is at least 1 relevant child then push it to the node body
-    if (relevantChildren) {
-      body = document.createElement('div');
-      body.classList.add('node__body');
-      body.appendChild(relevantChildren);
-    } else {
-      // Skip this node
-      return null;
-    }
-  }
-
-  // Body is ready, node's head and desc remain. 
-
-  let node, // div or figure
-      caption; // header or figcaption
-  
-  if (isTerminating) {
-    node = document.createElement('figure');
-    node.classList.add('node_terminating');
-    if (!nodeJSON.head && !nodeJSON.desc) {
-      body.classList.add('node__body_no-caption')
-    }
-    caption = document.createElement('figcaption');
-  } else {
-    node = nodeJSON.head ? document.createElement('section')
-                         : document.createElement('div');
-    caption = document.createElement('header');
-  }
-  node.classList.add('node');
-  caption.classList.add('node__caption');
-
-  if (nodeJSON.head) {
-    const heading = document.createElement(`h${headingLevel}`);
-    heading.classList.add('node__heading', `h${headingLevel}`);
-    heading.textContent = nodeJSON.head;
-    caption.appendChild(heading);
-  }
-  
-  if (nodeJSON.desc) {
-    const description = document.createElement('div');
-    description.classList.add('node__description');
-    description.innerHTML = converter.makeHtml(nodeJSON.desc);
-    caption.appendChild(description);
-  }
-
-  // Putting them in a header element, if at least 1 exists
-  if (nodeJSON.head || nodeJSON.desc) { node.appendChild(caption) }
-
-  node.appendChild(body);
-
-  return node;
-}
 
 // Function to render the YAML data into the DOM
 function renderPage(data, selectedTags) {
