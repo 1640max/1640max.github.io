@@ -24,7 +24,7 @@ var converter = new showdown.Converter({
 });
 
 
-function buildData(data, selectedTags, headingLevel = 2) {
+function buildContent(data, selectedTags, headingLevel = 2) {
   const result = document.createDocumentFragment();
   
   data.forEach(nodeJSON => {
@@ -56,7 +56,7 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     }
   } else {
     // Array to collect rendered children nodes that contain relevant terminating nodes
-    let relevantChildren = buildData(nodeJSON.body, selectedTags, headingLevel + 1);
+    let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
     // If there is at least 1 relevant child then push it to the node body
     if (relevantChildren) {
       body = document.createElement('div');
@@ -115,7 +115,7 @@ function renderPage(data, selectedTags) {
   const contentDiv = document.querySelector('.content');
   contentDiv.innerHTML = ''; // Clear existing content
 
-  const builtData = buildData(data, selectedTags);
+  const builtData = buildContent(data, selectedTags);
   contentDiv.appendChild(builtData);
 }
 
