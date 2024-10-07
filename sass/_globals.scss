@@ -19,7 +19,8 @@ p {
 }
 
 .content {
-  /* padding-inline: 3rem; */
+  padding: 0 0.5rem;
+  box-sizing: border-box;
   width: 100%;
   max-width: 1700px;
   margin-inline: auto;
