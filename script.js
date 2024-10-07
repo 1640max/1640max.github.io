@@ -23,6 +23,18 @@ var converter = new showdown.Converter({
   simpleLineBreaks: true,
 });
 
+
+function buildData(data, selectedTags, headingLevel = 2) {
+  const result = document.createDocumentFragment();
+  
+  data.forEach(nodeJSON => {
+    const node = buildNode(nodeJSON, selectedTags, headingLevel);
+    node && result.appendChild(node);
+  });
+
+  return result;
+}
+
 function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
   // Node body
   let body;
@@ -44,16 +56,12 @@ function buildNode(nodeJSON, selectedTags, headingLevel = 2) {
     }
   } else {
     // Array to collect rendered children nodes that contain relevant terminating nodes
-    let relevantChildren = [];
-    nodeJSON.body.forEach(childNode => {
-      const childSection = buildNode(childNode, selectedTags, headingLevel + 1);
-      childSection && relevantChildren.push(childSection);
-    });
+    let relevantChildren = buildData(nodeJSON.body, selectedTags, headingLevel + 1);
     // If there is at least 1 relevant child then push it to the node body
-    if (relevantChildren.length) {
+    if (relevantChildren) {
       body = document.createElement('div');
       body.classList.add('node__body');
-      relevantChildren.forEach(child => body.appendChild(child));
+      body.appendChild(relevantChildren);
     } else {
       // Skip this node
       return null;
@@ -110,18 +118,6 @@ function renderPage(data, selectedTags) {
   const builtData = buildData(data, selectedTags);
   contentDiv.appendChild(builtData);
 }
-
-function buildData(data, selectedTags, headingLevel = 2) {
-  const result = document.createDocumentFragment();
-  
-  data.forEach(nodeJSON => {
-    const node = buildNode(nodeJSON, selectedTags, headingLevel);
-    node && result.appendChild(node);
-  });
-
-  return result;
-}
-
 
 // Function to handle tag checkbox changes
 function handleTagChange(skeleton) {
