@@ -8,10 +8,23 @@
       - desc:
         tags: ["Сайт"]
         body: >
-          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-0.png)
-          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-1.png)
-          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-2.png)
-          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-3.png)
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-index-desktop.png)
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-index.png)
+      - desc:
+        tags: ["Сайт"]
+        body: >
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-contacts-desktop.png)
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-contacts.png)
+      - desc:
+        tags: ["Сайт"]
+        body: >
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-pieces.png)
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-pieces-2.png)
+      - desc:
+        tags: ["Сайт"]
+        body: >
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-pieces-desktop.png)
+          ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-pieces-desktop-2.png)
       - desc: |
           Написал текст о возможности заказать пьесу. Отработал потенциальные вопросы и возражения клиентов:
           - «Я не знаю, что именно мне нужно, и не смогу грамотно поставить задачу»
