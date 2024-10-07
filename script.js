@@ -107,11 +107,21 @@ function renderPage(data, selectedTags) {
   const contentDiv = document.querySelector('.content');
   contentDiv.innerHTML = ''; // Clear existing content
 
-  data.forEach(nodeJSON => {
-    const node = buildNode(nodeJSON, selectedTags);
-    node && contentDiv.appendChild(node);
-  });
+  const builtData = buildData(data, selectedTags);
+  contentDiv.appendChild(builtData);
 }
+
+function buildData(data, selectedTags, headingLevel = 2) {
+  const result = document.createDocumentFragment();
+  
+  data.forEach(nodeJSON => {
+    const node = buildNode(nodeJSON, selectedTags, headingLevel);
+    node && result.appendChild(node);
+  });
+
+  return result;
+}
+
 
 // Function to handle tag checkbox changes
 function handleTagChange(skeleton) {
