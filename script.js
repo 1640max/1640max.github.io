@@ -100,7 +100,7 @@ function buildContent(data, selectedTags, headingLevel = 2) {
 
 
 // Function to render the YAML data into the DOM
-function renderPage(data, selectedTags) {
+function renderContent(data, selectedTags = []) {
   const contentDiv = document.querySelector('.content');
   contentDiv.innerHTML = ''; // Clear existing content
 
@@ -109,14 +109,13 @@ function renderPage(data, selectedTags) {
 }
 
 // Function to handle tag checkbox changes
-function handleTagChange(skeleton) {
-  const checkboxes = document.querySelectorAll('#tag-filters input[type="checkbox"]');
+function handleTagChange(checkboxes, skeleton) {
   const selectedTags = Array.from(checkboxes)
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
 
   // Rebuild the page based on selected tags
-  renderPage(skeleton, selectedTags);
+  renderContent(skeleton, selectedTags);
 }
 
 async function initPage() {
@@ -126,13 +125,12 @@ async function initPage() {
   // Convert YAML to JavaScript object
   const skeleton = jsyaml.load(yamlData);
   
-  // Initially render the page with no filtering (or apply a default set of selected tags)
-  renderPage(skeleton, []);
+  renderContent(skeleton);
 
   // Add event listeners to checkboxes for tag filtering
-  document.querySelectorAll('#tag-filters input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', () => handleTagChange(skeleton));
-  });
+  const filterForm = document.querySelector('#tag-filters');
+  const checkboxes = filterForm.querySelectorAll('input[type="checkbox"]');
+  filterForm.addEventListener("change", () => handleTagChange(checkboxes, skeleton));
 }
 
 document.addEventListener("DOMContentLoaded", initPage);
