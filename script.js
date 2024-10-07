@@ -44,7 +44,7 @@ function buildContent(data, selectedTags, headingLevel = 2) {
     } else {
       // Recursively build children
       let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
-      if (relevantChildren) {
+      if (relevantChildren.childElementCount) {
         body = document.createElement('div');
         body.classList.add('node__body');
         body.appendChild(relevantChildren);
