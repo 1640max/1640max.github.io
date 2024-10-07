@@ -1,17 +1,24 @@
+@use "globals" as *;
+
 .node_terminating {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 3fr 2fr;
   gap: 2rem;
   margin: 0;
+
+  @media (min-width: $lg) {
+    grid-auto-flow: column;
+    grid-auto-columns: 3fr 2fr;
+  }
 }
 
 .node_terminating .node__caption {
-  position: sticky;
-  bottom: 50px;
-  align-self: end;
-  height: min-content;
-  margin: 3rem 0;
+  @media (min-width: $lg) {
+    position: sticky;
+    bottom: 50px;
+    align-self: end;
+    height: min-content;
+    margin: 3rem 0;
+  }
 }
 
 .node_terminating .node__body {
