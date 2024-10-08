@@ -46,12 +46,11 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
         return; // Skip node if not relevant
       }
 
-      // Creating node as figure and caption as figcaption
+      // Creating node as figure
       node = document.createElement('figure');
       node.classList.add('node_terminating');
-      if (captionExists) {
-        caption = document.createElement('figcaption');
-      } else {
+
+      if (!captionExists) {
         body.classList.add('node__body_no-caption');
       }
       
@@ -70,15 +69,20 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
         return; // Skip node if it has no relevant children
       }
 
-      // Creating node as section or div and caption as header
+      // Creating node as section or div
       node = nodeJSON.head ? document.createElement('section')
                            : document.createElement('div');
-      caption = document.createElement('header');
     }    
     node.classList.add('node');
 
     // Building caption
     if (captionExists) {
+
+      if (isTerminating) {
+        caption = document.createElement('figcaption');
+      } else {
+        caption = document.createElement('header');
+      }
 
       // Add heading if present
       if (nodeJSON.head) {
