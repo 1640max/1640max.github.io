@@ -24,47 +24,56 @@ var converter = new showdown.Converter({
 });
 
 
-function buildContent(data, selectedTags, headingLevel = 2) {
+function buildContent(data, selectedTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
   data.forEach(nodeJSON => {
-    let body;
+    let node, caption, body;
     const isTerminating = (typeof nodeJSON.body === 'string');
-    let node, caption;
 
-    // Handle terminating node
     if (isTerminating) {
-      if (!selectedTags.length || (nodeJSON.tags && nodeJSON.tags.some(tag => selectedTags.includes(tag)))) {
+
+      // Building body
+      const isRelevant = !selectedTags.length ||
+                         (nodeJSON.tags       &&
+                          nodeJSON.tags.some(tag => selectedTags.includes(tag)));
+      if (isRelevant) {
         body = document.createElement('div');
         body.classList.add('node__body');
         body.innerHTML = converter.makeHtml(nodeJSON.body);
       } else {
         return; // Skip node if not relevant
       }
+
+      // Creating node as figure and caption as figcaption
       node = document.createElement('figure');
       node.classList.add('node_terminating');
-      if (!nodeJSON.head && !nodeJSON.desc) {
+      const noCaption = !nodeJSON.head && !nodeJSON.desc
+      if (noCaption) {
         body.classList.add('node__body_no-caption');
       }
       caption = document.createElement('figcaption');
-
+      
     } else {
-      // Recursively build children
-      let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
-      if (relevantChildren.childElementCount) {
+
+      // Building body recursively
+      const relevantChildren = buildContent(nodeJSON.body,
+                                            selectedTags,
+                                            headingLevel + 1);
+      const notEmpty = relevantChildren.childElementCount;
+      if (notEmpty) {
         body = document.createElement('div');
         body.classList.add('node__body');
         body.appendChild(relevantChildren);
       } else {
         return; // Skip node if it has no relevant children
       }
+
+      // Creating node as section or div and caption as header
       node = nodeJSON.head ? document.createElement('section')
                            : document.createElement('div');
       caption = document.createElement('header');
-    }
-
-    node.classList.add('node');
-    caption.classList.add('node__caption');
+    }    
 
     // Add heading if present
     if (nodeJSON.head) {
@@ -84,9 +93,12 @@ function buildContent(data, selectedTags, headingLevel = 2) {
 
     // Append caption and body to the node
     if (nodeJSON.head || nodeJSON.desc) {
+      caption.classList.add('node__caption');
       node.appendChild(caption);
     }
     node.appendChild(body);
+
+    node.classList.add('node');
 
     // Append the node to the result
     result.appendChild(node);
