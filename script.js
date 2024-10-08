@@ -42,6 +42,9 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
         body = document.createElement('div');
         body.classList.add('node__body');
         body.innerHTML = converter.makeHtml(nodeJSON.body);
+        body.querySelectorAll('img').forEach( (img) => {
+          img.classList.add('node__img');
+        });
       } else {
         return; // Skip node if not relevant
       }

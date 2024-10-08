@@ -26,7 +26,8 @@
   grid-column: 1;
 }
 
-.node_terminating .node__body img {
+.node__img {
   width: 100%;
+  border-radius: .25rem;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
 }
