@@ -41,6 +41,13 @@ function buildContent(data, selectedTags, headingLevel = 2) {
       } else {
         return; // Skip node if not relevant
       }
+      node = document.createElement('figure');
+      node.classList.add('node_terminating');
+      if (!nodeJSON.head && !nodeJSON.desc) {
+        body.classList.add('node__body_no-caption');
+      }
+      caption = document.createElement('figcaption');
+
     } else {
       // Recursively build children
       let relevantChildren = buildContent(nodeJSON.body, selectedTags, headingLevel + 1);
@@ -51,21 +58,11 @@ function buildContent(data, selectedTags, headingLevel = 2) {
       } else {
         return; // Skip node if it has no relevant children
       }
-    }
-
-    // Create node element
-    if (isTerminating) {
-      node = document.createElement('figure');
-      node.classList.add('node_terminating');
-      if (!nodeJSON.head && !nodeJSON.desc) {
-        body.classList.add('node__body_no-caption');
-      }
-      caption = document.createElement('figcaption');
-    } else {
       node = nodeJSON.head ? document.createElement('section')
                            : document.createElement('div');
       caption = document.createElement('header');
     }
+
     node.classList.add('node');
     caption.classList.add('node__caption');
 
