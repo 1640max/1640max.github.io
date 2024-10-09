@@ -7,27 +7,26 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
     const captionExists = nodeJSON.head || nodeJSON.desc;
 
     if (isTerminating) {
-
-      // Building body
       const isRelevant = !selectedTags.length ||
                          (nodeJSON.tags       &&
                           nodeJSON.tags.some(tag => selectedTags.includes(tag)));
-      if (isRelevant) {
-        body = document.createElement('div');
-        body.classList.add('nodes__body');
-        body.innerHTML = converter.makeHtml(nodeJSON.body);
-        addClassBySelector(body, 'img', 'nodes__img');
-      } else {
-        return; // Skip node if not relevant
-      }
+      
+      // Skip node if not relevant
+      if (!isRelevant) return;
+      
+      // Building body
+      body = document.createElement('div');
+      body.classList.add('nodes__body');
+      body.innerHTML = converter.makeHtml(nodeJSON.body);
+      addClassBySelector(body, 'img', 'nodes__img');
 
       // Creating node as figure
       node = document.createElement('figure');
       node.classList.add('nodes__node_terminating');
 
-      if (!captionExists) {
+      /* if (!captionExists) {
         body.classList.add('nodes__body_no-caption');
-      }
+      } */
       
     } else {
 
@@ -35,14 +34,14 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       const relevantChildren = buildContent(nodeJSON.body,
                                             selectedTags,
                                             headingLevel + 1);
-      const notEmpty = relevantChildren.childElementCount;
-      if (notEmpty) {
-        body = document.createElement('div');
-        body.classList.add('nodes__body', 'nodes');
-        body.appendChild(relevantChildren);
-      } else {
-        return; // Skip node if it has no relevant children
-      }
+      const empty = !relevantChildren.childElementCount;
+
+      // Skip node if it has no relevant children
+      if (empty) return;
+      
+      body = document.createElement('div');
+      body.classList.add('nodes__body', 'nodes');
+      body.appendChild(relevantChildren);
 
       // Creating node as section or div
       node = nodeJSON.head ? document.createElement('section')
