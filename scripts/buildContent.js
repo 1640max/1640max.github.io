@@ -16,9 +16,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
         body = document.createElement('div');
         body.classList.add('nodes__body');
         body.innerHTML = converter.makeHtml(nodeJSON.body);
-        body.querySelectorAll('img').forEach( (img) => {
-          img.classList.add('nodes__img');
-        });
+        addClassBySelector(body, 'img', 'nodes__img');
       } else {
         return; // Skip node if not relevant
       }
@@ -88,4 +86,11 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
   });
 
   return result;
+}
+
+function addClassBySelector(element, selector, classname) {
+  element.querySelectorAll(selector)
+    .forEach( (item) => {
+      item.classList.add(classname);
+  });
 }
