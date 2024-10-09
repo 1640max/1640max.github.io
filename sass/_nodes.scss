@@ -73,3 +73,8 @@
   border-radius: .3rem;
   box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.12);
 }
+
+// I want some specific gaps be a little higher
+.nodes__node_terminating:not(:first-child) > .nodes__caption {
+  margin-top: calc( var(--term-nodes-gap) / 2);
+}
