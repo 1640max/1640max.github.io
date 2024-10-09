@@ -2,7 +2,9 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
   data.forEach(nodeJSON => {
-    let node, caption, body;
+    let node,           // resulting element
+        caption, body, // parts of node
+        blockName;    // 'term-node' or 'nodes'
     const isTerminating = (typeof nodeJSON.body === 'string');
     const captionExists = nodeJSON.head || nodeJSON.desc;
 
@@ -16,21 +18,21 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       
       // Building body
       body = document.createElement('div');
-      body.classList.add('nodes__body');
+      body.classList.add('term-node__body');
       body.innerHTML = converter.makeHtml(nodeJSON.body);
-      addClassBySelector(body, 'img', 'nodes__img');
+      addClassBySelector(body, 'img', 'term-node__img');
 
       // Creating node as figure
       node = document.createElement('figure');
-      node.classList.add('nodes__node_terminating');
+      node.classList.add('term-node');
 
       /* if (!captionExists) {
         body.classList.add('nodes__body_no-caption');
       } */
-      
+      blockName = 'term-node';
     } else {
 
-      // Building body recursively
+      // Building body
       const relevantChildren = buildContent(nodeJSON.body,
                                             selectedTags,
                                             headingLevel + 1);
@@ -45,7 +47,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       
       const allChildrenTerminating =
         Array.from(body.children).every(child => 
-          child.classList.contains('nodes__node_terminating')
+          child.classList.contains('term-node')
         );
       if (allChildrenTerminating) {
         body.classList.add('nodes_terminating');
@@ -55,8 +57,9 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       // Creating node as section or div
       node = nodeJSON.head ? document.createElement('section')
                            : document.createElement('div');
+      node.classList.add('nodes__node');
+      blockName = 'nodes';
     }    
-    node.classList.add('nodes__node');
 
     // Building caption
     if (captionExists) {
@@ -70,7 +73,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       // Add heading if present
       if (nodeJSON.head) {
         const heading = document.createElement(`h${headingLevel}`);
-        heading.classList.add('nodes__heading', `h${headingLevel}`);
+        heading.classList.add(`${blockName}__heading`, `h${headingLevel}`);
         heading.textContent = nodeJSON.head;
         caption.appendChild(heading);
       }
@@ -78,12 +81,12 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       // Add description if present
       if (nodeJSON.desc) {
         const description = document.createElement('div');
-        description.classList.add('nodes__description');
+        description.classList.add(`${blockName}__description`);
         description.innerHTML = converter.makeHtml(nodeJSON.desc);
         caption.appendChild(description);
       }
 
-      caption.classList.add('nodes__caption');
+      caption.classList.add(`${blockName}__caption`);
       node.appendChild(caption);
     }
 

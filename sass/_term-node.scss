@@ -1,0 +1,48 @@
+@use "globals" as *;
+
+.term-node {
+  display: grid;
+  gap: var(--term-node-gap);
+  margin: 0; // figure element reset
+
+  @media (min-width: $lg) {
+    grid-auto-flow: column;
+    grid-auto-columns: 3fr 2fr;
+  }
+}
+
+.term-node__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--caption-gap);
+
+  @media (min-width: $lg) {
+    position: sticky;
+    bottom: 50px;
+    align-self: end;
+    height: min-content;
+    margin: 3rem 0;
+  }
+}
+
+.term-node__body {
+  // TODO: Понять, как тут всё располагать
+  display: grid;
+  gap: var(--img-gap);
+
+  @media (min-width: $lg) {
+    grid-column: 1;
+  }
+}
+
+// I want some specific gaps be a little higher
+.term-node:not(:first-child) > .term-node__caption {
+  margin-top: calc( var(--term-nodes-gap) / 2);
+}
+
+.term-node__img {
+  display: block;
+  width: 100%;
+  border-radius: .3rem;
+  box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.12);
+}

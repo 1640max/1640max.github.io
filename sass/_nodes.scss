@@ -28,58 +28,13 @@
   gap: var(--node-gap);
 }
 
-// microcase
-.nodes__node_terminating {
-  display: grid;
-  gap: var(--term-node-gap);
-  margin: 0; // figure element reset
-
-  @media (min-width: $lg) {
-    grid-auto-flow: column;
-    grid-auto-columns: 3fr 2fr;
-  }
-}
-
 .nodes__caption {
   display: flex;
   flex-direction: column;
   gap: var(--caption-gap);
 }
 
-.nodes__node_terminating .nodes__caption {
-  @media (min-width: $lg) {
-    position: sticky;
-    bottom: 50px;
-    align-self: end;
-    height: min-content;
-    margin: 3rem 0;
-  }
-}
-
 // all descriptions are bold, except for terminating
-.nodes__description:not(.nodes__node_terminating .nodes__description) {
+.nodes__description {
   font-weight: 700;
-}
-
-// microcase body
-.nodes__node_terminating .nodes__body {
-  // TODO: Понять, как тут всё располагать
-  display: grid;
-  gap: var(--img-gap);
-
-  @media (min-width: $lg) {
-    grid-column: 1;
-  }
-}
-
-.nodes__img {
-  display: block;
-  width: 100%;
-  border-radius: .3rem;
-  box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.12);
-}
-
-// I want some specific gaps be a little higher
-.nodes__node_terminating:not(:first-child) > .nodes__caption {
-  margin-top: calc( var(--term-nodes-gap) / 2);
 }
