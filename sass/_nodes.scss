@@ -1,14 +1,43 @@
 @use "globals" as *;
 
+:root {
+  // Gaps between
+  --nodes-gap: 4rem;        // nodes
+  --node-gap: 1.5rem;      // caption and body
+  --term-gap: .75rem;     // caption and body in microcase
+  --caption-gap: .25rem; // heading and description
+  --img-gap: .5rem;     // images in microcase
+}
+
+.nodes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nodes-gap);
+}
+
+// container for caption and body
+.nodes__node {
+  display: flex;
+  flex-direction: column;
+  gap: var(--node-gap);
+}
+
+// microcase
 .nodes__node_terminating {
   display: grid;
-  gap: 2rem;
-  margin: 0;
+  gap: var(--term-gap);
+  margin: 0; // figure element reset
 
   @media (min-width: $lg) {
     grid-auto-flow: column;
     grid-auto-columns: 3fr 2fr;
   }
+}
+
+.nodes__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--caption-gap);
 }
 
 .nodes__node_terminating .nodes__caption {
@@ -21,9 +50,15 @@
   }
 }
 
+// microcase body
 .nodes__node_terminating .nodes__body {
-  font-style: italic;
-  grid-column: 1;
+  // TODO: Понять, как тут всё располагать
+  display: grid;
+  gap: var(--img-gap);
+
+  @media (min-width: $lg) {
+    grid-column: 1;
+  }
 }
 
 .nodes__img {
