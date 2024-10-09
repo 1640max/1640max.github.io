@@ -126,13 +126,9 @@
       - desc:
         tags: ["Сайт"]
         body: >
-          <iframe class="vimeo" src="https://player.vimeo.com/video/767227997?h=54a8e6cac9&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
-          <iframe class="vimeo" src="https://player.vimeo.com/video/765223210?h=132c3f3f1a&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
-          <iframe class="vimeo" src="https://player.vimeo.com/video/767234540?h=0baeba0068&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
-
+         
 - head: Треш-спектакль «Четыре жирных УЁ...»
   body:
-    - body: <iframe class="vimeo" src="https://player.vimeo.com/video/811811665?h=82338b3484&amp;autoplay=1&amp;loop=1&amp;autopause=0" frameborder="0" allow="autoplay" allowfullscreen sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
     - desc:
       tags: ["Разное"]
       body: "Жирные, наклейки"
