@@ -56,6 +56,11 @@
   }
 }
 
+// all descriptions are bold, except for terminating
+.nodes__description:not(.nodes__node_terminating .nodes__description) {
+  font-weight: 700;
+}
+
 // microcase body
 .nodes__node_terminating .nodes__body {
   // TODO: Понять, как тут всё располагать
