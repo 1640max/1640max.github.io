@@ -87,7 +87,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
   
   // TODO: объединить это с converter.makeHtml(),
   // а то оно отрабатывает по миллион раз на каждую ноду
-  addClassBySelector(result, 'p, ul', 'nodes__reset');
+  addClassBySelector(result, 'p, ul', 'margin-reset');
   return result;
 }
 
