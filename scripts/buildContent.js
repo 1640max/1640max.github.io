@@ -5,9 +5,8 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
     let node,           // resulting element
         caption, body, // parts of node
         blockName;    // 'term-node' or 'nodes'
-    const isTerminating = (typeof nodeJSON.body === 'string');
-    const captionExists = nodeJSON.head || nodeJSON.desc;
 
+    const isTerminating = (typeof nodeJSON.body === 'string');
     if (isTerminating) {
       const isRelevant = !selectedTags.length ||
                          (nodeJSON.tags       &&
@@ -26,9 +25,6 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       node = document.createElement('figure');
       node.classList.add('term-node');
 
-      /* if (!captionExists) {
-        body.classList.add('nodes__body_no-caption');
-      } */
       blockName = 'term-node';
     } else {
 
@@ -62,7 +58,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
     }    
 
     // Building caption
-    if (captionExists) {
+    if (nodeJSON.head || nodeJSON.desc) {
 
       if (isTerminating) {
         caption = document.createElement('figcaption');
