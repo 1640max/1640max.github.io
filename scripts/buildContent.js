@@ -84,7 +84,10 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
     // Append the node to the result
     result.appendChild(node);
   });
-
+  
+  // TODO: объединить это с converter.makeHtml(),
+  // а то оно отрабатывает по миллион раз на каждую ноду
+  addClassBySelector(result, 'p, ul', 'nodes__reset');
   return result;
 }
 
