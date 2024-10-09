@@ -40,8 +40,17 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
       if (empty) return;
       
       body = document.createElement('div');
-      body.classList.add('nodes__body', 'nodes');
       body.appendChild(relevantChildren);
+      body.classList.add('nodes__body', 'nodes');
+      
+      const allChildrenTerminating =
+        Array.from(body.children).every(child => 
+          child.classList.contains('nodes__node_terminating')
+        );
+      if (allChildrenTerminating) {
+        body.classList.add('nodes_terminating');
+      }
+    
 
       // Creating node as section or div
       node = nodeJSON.head ? document.createElement('section')

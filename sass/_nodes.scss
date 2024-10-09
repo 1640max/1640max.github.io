@@ -2,17 +2,23 @@
 
 :root {
   // Gaps between
-  --nodes-gap: 4rem;        // nodes
-  --node-gap: 1.5rem;      // caption and body
-  --term-gap: .75rem;     // caption and body in microcase
-  --caption-gap: .25rem; // heading and description
-  --img-gap: .5rem;     // images in microcase
+  --nodes-gap: 4rem;          // nodes
+  --term-nodes-gap: 1.5rem;  // terminating nodes
+  --node-gap: 1.5rem;       // caption and body
+  --term-node-gap: .75rem; // caption and body in microcase
+  --caption-gap: .25rem;  // heading and description
+  --img-gap: .5rem;      // images in microcase
 }
 
 .nodes {
   display: flex;
   flex-direction: column;
   gap: var(--nodes-gap);
+}
+
+// all children are terminating
+.nodes_terminating {
+  gap: var(--term-nodes-gap);
 }
 
 // container for caption and body
@@ -25,7 +31,7 @@
 // microcase
 .nodes__node_terminating {
   display: grid;
-  gap: var(--term-gap);
+  gap: var(--term-node-gap);
   margin: 0; // figure element reset
 
   @media (min-width: $lg) {
