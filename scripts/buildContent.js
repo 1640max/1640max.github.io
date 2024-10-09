@@ -1,29 +1,3 @@
-// https://postsandprograms.com/posts/20210722/
-showdown.extension("remove-p-from-img", function () {
-  return [
-    {
-      type: "output",
-      filter: function (text) {
-        text = text.replace(
-          // match all <p>'s before and after an <img> tag
-          /(<\/?p[^>]*>)((?=<img.+>)|(?<=<img.+>))/g,
-          ""
-        );
-        return text;
-      },
-    },
-  ];
-});
-
-// Markdown to HTML converter with extensions and parameters
-var converter = new showdown.Converter({
-  extensions: ["remove-p-from-img"],
-  parseImgDimensions: true,
-  openLinksInNewWindow: true,
-  simpleLineBreaks: true,
-});
-
-
 function buildContent(data, selectedTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
@@ -115,40 +89,3 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
 
   return result;
 }
-
-
-// Function to render the YAML data into the DOM
-function renderContent(data, selectedTags = []) {
-  const contentDiv = document.querySelector('.content');
-  contentDiv.innerHTML = ''; // Clear existing content
-
-  const builtData = buildContent(data, selectedTags);
-  contentDiv.appendChild(builtData);
-}
-
-// Function to handle tag checkbox changes
-function handleTagChange(checkboxes, skeleton) {
-  const selectedTags = Array.from(checkboxes)
-    .filter(checkbox => checkbox.checked)
-    .map(checkbox => checkbox.value);
-
-  // Rebuild the page based on selected tags
-  renderContent(skeleton, selectedTags);
-}
-
-async function initPage() {
-  const response = await fetch('/data.yml');
-  const yamlData = await response.text();
-  
-  // Convert YAML to JavaScript object
-  const skeleton = jsyaml.load(yamlData);
-  
-  renderContent(skeleton);
-
-  // Add event listeners to checkboxes for tag filtering
-  const filterForm = document.querySelector('#tag-filters');
-  const checkboxes = filterForm.querySelectorAll('input[type="checkbox"]');
-  filterForm.addEventListener("change", () => handleTagChange(checkboxes, skeleton));
-}
-
-document.addEventListener("DOMContentLoaded", initPage);
