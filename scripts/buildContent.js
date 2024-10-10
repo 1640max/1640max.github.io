@@ -36,20 +36,24 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
 
     } else {
 
-      // All children are automatically relevant if
-      // node's tags intersect with relevant ones.
+      // All children are automatically relevant if at least one
+      // node's tag intersect with relevant ones.
       const allChildrenRelevant = 
         relevantTags.length &&
         nodeJSON.tags &&
         nodeJSON.tags.some(tag => relevantTags.includes(tag));
       
-      // To pass this good news to the children
-      // let's just erase all the relevant tags. Let there be anarchy!
-      if (allChildrenRelevant) relevantTags = [];
+      // If so let's pass an empty array instead of relevant tags.
+      // This way each descending terminating nоde will be relevant.
+      let relevantTagsToPass;
+      if (allChildrenRelevant)
+        relevantTagsToPass = [];
+      else
+        relevantTagsToPass = relevantTags;
 
       // Building body
       const relevantChildren = buildContent(nodeJSON.body,
-                                            relevantTags,
+                                            relevantTagsToPass,
                                             headingLevel + 1);
       const empty = !relevantChildren.childElementCount;
 
