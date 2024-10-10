@@ -5,6 +5,7 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
     let node,           // resulting element
         caption, body, // parts of node
         blockName;    // 'term-node' or 'nodes'
+    const captionExists = nodeJSON.head || nodeJSON.desc;
 
     const isTerminating = (typeof nodeJSON.body === 'string');
     if (isTerminating) {
@@ -32,6 +33,7 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       node.classList.add('term-node');
 
       blockName = 'term-node';
+
     } else {
 
       // All children are automatically relevant if
@@ -54,6 +56,13 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       // Skip node if it has no relevant children
       if (empty) return;
       
+      // If no caption then simply pass the children.
+      // This node is probably only for tags nesting
+      if (!captionExists) {
+        result.appendChild(relevantChildren);
+        return;
+      }
+
       body = document.createElement('div');
       body.appendChild(relevantChildren);
       body.classList.add('nodes__body', 'nodes');
@@ -66,7 +75,6 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
         body.classList.add('nodes_terminating');
       }
     
-
       // Creating node as section or div
       node = nodeJSON.head ? document.createElement('section')
                            : document.createElement('div');
@@ -75,7 +83,7 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
     }    
 
     // Building caption
-    if (nodeJSON.head || nodeJSON.desc) {
+    if (captionExists) {
 
       if (isTerminating) {
         caption = document.createElement('figcaption');
