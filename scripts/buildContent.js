@@ -34,6 +34,17 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       blockName = 'term-node';
     } else {
 
+      // All children are automatically relevant if
+      // node's tags intersect with relevant ones.
+      const allChildrenRelevant = 
+        relevantTags.length &&
+        nodeJSON.tags &&
+        nodeJSON.tags.some(tag => relevantTags.includes(tag));
+      
+      // To pass this good news to the children
+      // let's just erase all the relevant tags. Let there be anarchy!
+      if (allChildrenRelevant) relevantTags = [];
+
       // Building body
       const relevantChildren = buildContent(nodeJSON.body,
                                             relevantTags,
