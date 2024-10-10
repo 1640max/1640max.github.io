@@ -1,4 +1,4 @@
-function buildContent(data, selectedTags = [], headingLevel = 2) {
+function buildContent(data, relevantTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
   data.forEach(nodeJSON => {
@@ -8,9 +8,15 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
 
     const isTerminating = (typeof nodeJSON.body === 'string');
     if (isTerminating) {
-      const isRelevant = !selectedTags.length ||
-                         (nodeJSON.tags       &&
-                          nodeJSON.tags.some(tag => selectedTags.includes(tag)));
+
+      // Terminating node is relevant if:
+      // - there are no relevant tags
+      // - or at least one of it is in node's list
+      // Terminating node is not relevant if:
+      // - there is at least one relevant tag but no node's tag
+      const isRelevant = !relevantTags.length ||
+                          nodeJSON.tags &&
+                          nodeJSON.tags.some(tag => relevantTags.includes(tag));
       
       // Skip node if not relevant
       if (!isRelevant) return;
@@ -30,7 +36,7 @@ function buildContent(data, selectedTags = [], headingLevel = 2) {
 
       // Building body
       const relevantChildren = buildContent(nodeJSON.body,
-                                            selectedTags,
+                                            relevantTags,
                                             headingLevel + 1);
       const empty = !relevantChildren.childElementCount;
 
