@@ -1,5 +1,5 @@
 function renderContent(data, selectedTags = []) {
-  const contentDiv = document.querySelector('#nodes');
+  const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content
 
   const builtData = buildContent(data, selectedTags);
