@@ -2,7 +2,8 @@ function renderContent(data, selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content
 
-  const builtData = buildContent(data, selectedTags);
+  let builtData = buildContent(data, selectedTags);
+  imgCorrection(builtData);
   contentDiv.appendChild(builtData);
 }
 
