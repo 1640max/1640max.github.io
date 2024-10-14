@@ -3,8 +3,7 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
 
   data.forEach(nodeJSON => {
     let node,           // resulting element
-        caption, body, // parts of node
-        blockName;    // 'term-node' or 'nodes'
+        caption, body; // parts of node
     const captionExists = nodeJSON.head || nodeJSON.desc;
 
     const isTerminating = (typeof nodeJSON.body === 'string');
@@ -31,8 +30,6 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       // Creating node as figure
       node = document.createElement('figure');
       node.classList.add('term-node');
-
-      blockName = 'term-node';
 
     } else {
 
@@ -71,22 +68,24 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       body.appendChild(relevantChildren);
     
       node = document.createDocumentFragment();
-      blockName = 'nodes';
     }    
 
     // Building caption
     if (captionExists) {
 
+      let blockName;
       if (isTerminating) {
         caption = document.createElement('figcaption');
+        blockName = 'term-node__';
       } else {
         caption = document.createElement('hgroup');
+        blockName = '';
       }
 
       // Add heading if present
       if (nodeJSON.head) {
         const heading = document.createElement(`h${headingLevel}`);
-        heading.classList.add(`${blockName}__heading`, `h${headingLevel}`);
+        heading.classList.add(`${blockName}heading`, `h${headingLevel}`);
         heading.textContent = nodeJSON.head;
         caption.appendChild(heading);
       }
@@ -94,12 +93,12 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       // Add description if present
       if (nodeJSON.desc) {
         const description = document.createElement('div');
-        description.classList.add(`${blockName}__description`);
+        description.classList.add(`${blockName}description`);
         description.innerHTML = converter.makeHtml(nodeJSON.desc);
         caption.appendChild(description);
       }
 
-      caption.classList.add(`${blockName}__caption`);
+      caption.classList.add(`${blockName}caption`);
       node.appendChild(caption);
     }
 
