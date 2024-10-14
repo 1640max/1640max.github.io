@@ -8,6 +8,16 @@ $xl: 1200px;
 $xxl: 1400px;
 $xxxl: 1920px;
 
+:root {
+  // Gaps between
+  --nodes-gap: 4rem;          // nodes
+  --term-nodes-gap: 1.5rem;  // terminating nodes
+  --node-gap: 1.5rem;       // caption and body
+  --term-node-gap: .75rem; // caption and body in microcase
+  --caption-gap: .25rem;  // heading and description
+  --img-gap: .5rem;      // images in microcase
+}
+
 html {
   font-size: 16px;
 
