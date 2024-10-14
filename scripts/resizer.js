@@ -13,7 +13,9 @@ function imgCorrection(context = document) {
 
 function applyCorrection(image) {
   const aspectRatio = image.naturalWidth / image.naturalHeight;
-  if (aspectRatio > 1.2) {
-    image.classList.add('term-node__img_width_full');
+  if (aspectRatio >= 5/4) {
+    image.classList.add('term-node__img_width_wide');
+  } else if (aspectRatio <= 2/3) {
+    image.classList.add('term-node__img_width_tall');
   }
 } 
