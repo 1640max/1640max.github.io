@@ -5,6 +5,10 @@
   gap: var(--term-node-gap);
   margin: 0; // figure element reset
 
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: #eee;
+
   @media (min-width: $lg) {
     grid-auto-flow: column;
     grid-auto-columns: 3fr 2fr;
@@ -37,16 +41,11 @@
   }
 }
 
-// I want some specific gaps be a little higher
-.term-node:not(:first-child) > .term-node__caption {
-  margin-top: calc( var(--term-nodes-gap) / 2);
-}
-
 .term-node__img {
   display: block;
   width: 100%;
   border-radius: .3rem;
-  box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.12);
   
   &:only-child:not(.term-node__img_width_full) {
     width: 80%;

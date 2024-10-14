@@ -23,8 +23,3 @@
   flex-direction: column;
   gap: var(--caption-gap);
 }
-
-// all descriptions are bold, except for terminating
-.nodes__description {
-  font-weight: 700;
-}
