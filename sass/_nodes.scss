@@ -1,25 +1,16 @@
 @use "globals" as *;
 
-.nodes {
-  display: flex;
-  flex-direction: column;
-  gap: var(--nodes-gap);
-}
-
-// all children are terminating
-.nodes_terminating {
-  gap: var(--term-nodes-gap);
-}
-
-// container for caption and body
-.nodes__node {
-  display: flex;
-  flex-direction: column;
-  gap: var(--node-gap);
-}
-
 .nodes__caption {
   display: flex;
   flex-direction: column;
   gap: var(--caption-gap);
+  margin: var(--nodes-gap) 0 var(--node-gap) 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  & + & {
+    margin-top: 0;
+  }
 }
