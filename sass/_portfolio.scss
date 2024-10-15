@@ -1,0 +1,28 @@
+@use "globals" as *;
+
+.portfolio {
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1700px;
+  margin-inline: auto;
+}
+
+.portfolio__caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--caption-gap);
+  margin: var(--nodes-gap) 0 var(--node-gap) 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  & + & {
+    margin-top: 0;
+  }
+}
+
+.portfolio__term-node {
+  margin-bottom: var(--term-nodes-gap);
+}
