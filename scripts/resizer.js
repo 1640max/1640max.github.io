@@ -1,5 +1,5 @@
 function imgCorrection(context = document) {
-    const images = context.querySelectorAll('.term-node__img');
+    const images = context.querySelectorAll('.microcase__img');
     images.forEach(image => {
       // Check if the image is already loaded
       if (image.complete) {
@@ -14,8 +14,8 @@ function imgCorrection(context = document) {
 function applyCorrection(image) {
   const aspectRatio = image.naturalWidth / image.naturalHeight;
   if (aspectRatio >= 5/4) {
-    image.classList.add('term-node__img_width_wide');
+    image.classList.add('microcase__img_width_wide');
   } else if (aspectRatio <= 2/3) {
-    image.classList.add('term-node__img_width_tall');
+    image.classList.add('microcase__img_width_tall');
   }
 } 

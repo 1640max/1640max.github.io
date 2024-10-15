@@ -23,13 +23,13 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       
       // Building body
       body = document.createElement('div');
-      body.classList.add('term-node__body');
+      body.classList.add('microcase__body');
       body.innerHTML = converter.makeHtml(nodeJSON.body);
-      addClassBySelector(body, 'img', 'term-node__img');
+      addClassBySelector(body, 'img', 'microcase__img');
 
       // Creating node as figure
       node = document.createElement('figure');
-      node.classList.add('term-node', 'portfolio__term-node');
+      node.classList.add('microcase', 'portfolio__microcase');
 
     } else {
 
@@ -76,7 +76,7 @@ function buildContent(data, relevantTags = [], headingLevel = 2) {
       let blockName;
       if (isTerminating) {
         caption = document.createElement('figcaption');
-        blockName = 'term-node';
+        blockName = 'microcase';
       } else {
         caption = document.createElement('hgroup');
         blockName = 'portfolio';
