@@ -9,6 +9,8 @@
   padding: 1rem;
   background-color: #eee;
 
+  container: microcase / inline-size;
+
   @media (min-width: $lg) {
     grid-auto-flow: column;
     grid-auto-columns: 3fr 2fr;
@@ -22,10 +24,10 @@
 
   @media (min-width: $lg) {
     position: sticky;
-    bottom: 50px;
+    bottom: 2rem;
     align-self: end;
     height: min-content;
-    margin: 3rem 0;
+    margin: 1rem 0;
   }
 }
 
@@ -37,7 +39,7 @@
   justify-items: center;
   
   @media (min-width: $lg) {
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 28%));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 18cqw));
     grid-column: 1;
   }
 }
