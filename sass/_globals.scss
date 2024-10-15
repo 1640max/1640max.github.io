@@ -32,6 +32,13 @@ html {
   padding: 0;
 }
 
+.page__portfolio {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1700px;
+  margin: 3rem auto 0;
+}
+
 .margin-reset {
   margin: 0;
 }
