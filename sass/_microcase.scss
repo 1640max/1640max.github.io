@@ -58,3 +58,8 @@
 .microcase__img_width_wide {
   grid-column: 1 / -1; // Full row width
 }
+
+// TODO: придумать, как сделать абзацный отступ красиво и в микрокейсах, и в кэпшенах
+p.margin-reset + p.margin-reset {
+  margin-top: .5rem;
+}
