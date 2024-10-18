@@ -221,13 +221,29 @@
         ![Меню на экране в кафе](cases/coffee-master/Матча.avif)
 
 - head: Brain Rain Lab
+  desc: Организатор детских праздников в Сербии и Черногории
   body:
-    - desc:
-      tags: ["Сториз", "Тексты", "Хайлайтс"]
-      body: "Brain Rain Lab, хайлайтсы"
-    - desc:
-      tags: ["Хайлайтс"]
-      body: "Brain Rain Lab, кружочки хайлайтсов"
+    - head: Закреплённые сторис
+      tags: ["Сториз", "Хайлайтс"]
+      body:
+        - desc: |
+            В тексте рассказываю, чем ребята занимаются, подчёркиваю опыт и привожу примеры, в каких ситуациях они могут быть полезны.  
+            <p style="font-size:.7em">Внимательный зритель заметит, чем хозяин этого сайта иногда подрабатывает.</p>
+          tags: ["Тексты"]
+          body: >
+            ![Тексты для организатора праздников «Brain Rain Lab»](cases/brl/highlights-1.png)
+            ![Тексты для организатора праздников «Brain Rain Lab»](cases/brl/highlights-2.png)
+        - desc:
+          body: >
+            ![Закреплённые сторис для организатора праздников «Brain Rain Lab»](cases/brl/highlights-3.png)
+            ![«Актуальное» в Инстаграм для детских аниматоров «Brain Rain Lab»](cases/brl/highlights-4.png)
+            ![Хайлайтс для ведущих на праздник «Brain Rain Lab»](cases/brl/highlights-5.png)
+    - head: Рекламные креативы
+      tags: ["Посты в соцсети", "Сториз", "Рекламные креативы"]
+      body:
+        - body: >
+            ![Дизайн рекламных постов «Brain Rain Lab»](cases/brl/adv-1.png)
+            ![Рекламные креативы «Brain Rain Lab»](cases/brl/adv-2.png)
 
 - head: Театр Алехандро
   body:
