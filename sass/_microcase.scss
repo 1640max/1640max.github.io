@@ -60,6 +60,7 @@
 }
 
 // TODO: придумать, как сделать абзацный отступ красиво и в микрокейсах, и в кэпшенах
-p.margin-reset + p.margin-reset {
+p.margin-reset + p.margin-reset,
+li + li {
   margin-top: .5rem;
 }
