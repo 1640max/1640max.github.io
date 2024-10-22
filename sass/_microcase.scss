@@ -46,7 +46,7 @@
 
 .microcase__img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   border-radius: .3rem;
   box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.12);
   
@@ -57,6 +57,7 @@
 
 .microcase__img_width_wide {
   grid-column: 1 / -1; // Full row width
+  max-height: 80vh;
 }
 
 // TODO: придумать, как сделать абзацный отступ красиво и в микрокейсах, и в кэпшенах
