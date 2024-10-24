@@ -1,0 +1,21 @@
+.filter__hint {
+  font-weight: 600;
+  text-align: center;
+}
+
+.filter__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 40rem;
+}
+
+.filter__tag {
+  display: flex;
+  gap: .2rem;
+  border: 1px solid;
+  border-radius: 9999px;
+  padding: .2rem .6rem .2rem .3rem;
+}

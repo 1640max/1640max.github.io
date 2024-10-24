@@ -7,7 +7,8 @@ function renderContent(data, selectedTags = []) {
   contentDiv.appendChild(builtData);
 }
 
-function handleTagChange(checkboxes, skeleton) {
+function handleTagChange(filterForm, skeleton) {
+  const checkboxes = filterForm.querySelectorAll('.filter__input');
   const selectedTags = Array.from(checkboxes)
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
@@ -26,9 +27,8 @@ async function initPage() {
   renderContent(skeleton);
 
   // Add event listeners to checkboxes for tag filtering
-  const filterForm = document.querySelector('#tag-filters');
-  const checkboxes = filterForm.querySelectorAll('input[type="checkbox"]');
-  filterForm.addEventListener("change", () => handleTagChange(checkboxes, skeleton));
+  const filterForm = document.querySelector('.filter');
+  filterForm.addEventListener("change", () => handleTagChange(filterForm, skeleton));
 }
 
 initPage();

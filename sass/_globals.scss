@@ -31,6 +31,18 @@ html {
   padding: 0;
 }
 
+.page__heading {
+  font-size: 1.5rem;;
+  text-align: center;
+}
+
+.page__filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0 3rem;
+}
+
 .page__portfolio {
   box-sizing: border-box;
   width: 100%;

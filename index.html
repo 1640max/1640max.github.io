@@ -8,16 +8,83 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="page">
+    <h1 class="page__heading">Дизайнерское портфолио Макса Мальцева</h1>
     
-    <div id="tag-filters">
-      <label><input type="checkbox" value="Логотип">Логотип</label>
-      <label><input type="checkbox" value="Разное">Разное</label>
-      <label><input type="checkbox" value="Сайт">Сайт</label>
-      <label><input type="checkbox" value="Тексты">Тексты</label>
-      <label><input type="checkbox" value="Хайлайтс">Хайлайтс</label>
-    </div>
+    <section class="filter page__filter">
+      <p class="filter__hint">Показать только:</p>
+      <div class="filter__inputs">
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Сайт">
+                 Сайты
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Логотип">
+                 Логотипы
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Тексты">
+                 Тексты
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Посты в соцсети">
+                 Посты в соцсети
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Сторис">
+                 Сторис
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Хайлайтс">
+                 Закреплённые сторис
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Оформление ВК">
+                 Оформление ВК
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Рекламные креативы">
+                 Рекламные креативы
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Визитки">
+                 Визитки
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Обработка фото">
+                 Обработка фото
+        </label>
+        <label class="filter__tag">
+          <input class="filter__input"
+                 type="checkbox"
+                 value="Разное">
+                 Разное
+        </label>
+      </div>
+    </section>
     
-    <div class="portfolio page__portfolio"></div>
+    <hr>
+
+    <section class="portfolio page__portfolio"></section>
     
     <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/showdown@2.1/dist/showdown.min.js"></script>
