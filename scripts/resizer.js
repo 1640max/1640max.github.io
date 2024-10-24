@@ -1,17 +1,19 @@
 function imgCorrection(context = document) {
     const images = context.querySelectorAll('.microcase__img');
-    images.forEach(image => {
+    images.forEach((image, count) => {
       // Check if the image is already loaded
       if (image.complete) {
-        applyCorrection(image);
+        addSizeModifier(image);
       } else {
-        // Add event listener to run the logic once the image has loaded
-        image.addEventListener('load', () => applyCorrection(image));
+        image.addEventListener('load', () => addSizeModifier(image));
+        if (count > 2) image.setAttribute('loading', 'lazy');
+        image.setAttribute('width', 720);
+        image.setAttribute('height', 1500);
       }
     });
 };
 
-function applyCorrection(image) {
+function addSizeModifier(image) {
   const aspectRatio = image.naturalWidth / image.naturalHeight;
   if (aspectRatio >= 5/4) {
     image.classList.add('microcase__img_width_wide');

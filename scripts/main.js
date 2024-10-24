@@ -31,4 +31,4 @@ async function initPage() {
   filterForm.addEventListener("change", () => handleTagChange(checkboxes, skeleton));
 }
 
-document.addEventListener("DOMContentLoaded", initPage);
+initPage();

@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/showdown@2.1/dist/showdown.min.js"></script>
-    <script defer src="scripts/initShowdown.js"></script>
-    <script defer src="scripts/buildContent.js"></script>
-    <script defer src="scripts/main.js"></script>
-    <script defer src="scripts/resizer.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="page">
-
+    
     <div id="tag-filters">
       <label><input type="checkbox" value="Логотип">Логотип</label>
       <label><input type="checkbox" value="Разное">Разное</label>
@@ -21,8 +16,14 @@
       <label><input type="checkbox" value="Тексты">Тексты</label>
       <label><input type="checkbox" value="Хайлайтс">Хайлайтс</label>
     </div>
-
+    
     <div class="portfolio page__portfolio"></div>
     
+    <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/showdown@2.1/dist/showdown.min.js"></script>
+    <script defer src="scripts/initShowdown.js"></script>
+    <script defer src="scripts/resizer.js"></script>
+    <script defer src="scripts/buildContent.js"></script>
+    <script defer src="scripts/main.js"></script>
   </body>
 </html>
