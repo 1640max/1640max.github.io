@@ -40,13 +40,13 @@
   justify-content: center;
   justify-items: center;
 
-  // if there is a caption then align to the left.
-  .microcase__caption ~ & {
-    justify-content: left;
-}
-  
   @media (min-width: $lg) {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 18cqw));
+    
+    // if there is a caption then align to the left.
+    .microcase__caption ~ & {
+      justify-content: left;
+    }
   }
 }
 
