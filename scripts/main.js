@@ -7,7 +7,7 @@ function refreshContent(selectedTags = []) {
   contentDiv.appendChild(content);
 }
 
-function handleTagChange(filterForm) {
+function handleTagChange() {
   const checkboxes = filterForm.querySelectorAll('.filter__input');
   const selectedTags = Array.from(checkboxes)
     .filter(checkbox => checkbox.checked)
@@ -25,11 +25,11 @@ async function initPage() {
   skeleton = jsyaml.load(yamlSkeleton);
   
   refreshContent();
-
-  // Add event listeners to checkboxes for tag filtering
-  const filterForm = document.querySelector('.filter');
-  filterForm.addEventListener("change", () => handleTagChange(filterForm));
 }
 
 let skeleton;
 initPage();
+
+// Add event listeners to checkboxes for tag filtering
+const filterForm = document.querySelector('.filter');
+filterForm.addEventListener("change", handleTagChange);
