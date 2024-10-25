@@ -1,7 +1,7 @@
-function buildContent(data, relevantTags = [], headingLevel = 2) {
+function buildContent(skeleton, relevantTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
-  data.forEach(nodeJSON => {
+  skeleton.forEach(nodeJSON => {
     let node,           // resulting element
         caption, body; // parts of node
     const captionExists = nodeJSON.head || nodeJSON.desc;

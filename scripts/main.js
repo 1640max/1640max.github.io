@@ -1,10 +1,10 @@
-function renderContent(data, selectedTags = []) {
+function renderContent(skeleton, selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content
 
-  let builtData = buildContent(data, selectedTags);
-  imgCorrection(builtData);
-  contentDiv.appendChild(builtData);
+  let content = buildContent(skeleton, selectedTags);
+  imgCorrection(content);
+  contentDiv.appendChild(content);
 }
 
 function handleTagChange(filterForm, skeleton) {
@@ -18,11 +18,11 @@ function handleTagChange(filterForm, skeleton) {
 }
 
 async function initPage() {
-  const response = await fetch('/data.yml');
-  const yamlData = await response.text();
+  const response = await fetch('/skeleton.yml');
+  const yamlSkeleton = await response.text();
   
   // Convert YAML to JavaScript object
-  const skeleton = jsyaml.load(yamlData);
+  const skeleton = jsyaml.load(yamlSkeleton);
   
   renderContent(skeleton);
 
