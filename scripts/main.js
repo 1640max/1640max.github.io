@@ -1,4 +1,4 @@
-function renderContent(skeleton, selectedTags = []) {
+function renderContent(selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content
 
@@ -7,14 +7,14 @@ function renderContent(skeleton, selectedTags = []) {
   contentDiv.appendChild(content);
 }
 
-function handleTagChange(filterForm, skeleton) {
+function handleTagChange(filterForm) {
   const checkboxes = filterForm.querySelectorAll('.filter__input');
   const selectedTags = Array.from(checkboxes)
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
 
   // Rebuild the page based on selected tags
-  renderContent(skeleton, selectedTags);
+  renderContent(selectedTags);
 }
 
 async function initPage() {
@@ -22,13 +22,14 @@ async function initPage() {
   const yamlSkeleton = await response.text();
   
   // Convert YAML to JavaScript object
-  const skeleton = jsyaml.load(yamlSkeleton);
+  skeleton = jsyaml.load(yamlSkeleton);
   
-  renderContent(skeleton);
+  renderContent();
 
   // Add event listeners to checkboxes for tag filtering
   const filterForm = document.querySelector('.filter');
-  filterForm.addEventListener("change", () => handleTagChange(filterForm, skeleton));
+  filterForm.addEventListener("change", () => handleTagChange(filterForm));
 }
 
+let skeleton;
 initPage();
