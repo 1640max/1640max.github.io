@@ -1,4 +1,4 @@
-function renderContent(selectedTags = []) {
+function refreshContent(selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content
 
@@ -14,7 +14,7 @@ function handleTagChange(filterForm) {
     .map(checkbox => checkbox.value);
 
   // Rebuild the page based on selected tags
-  renderContent(selectedTags);
+  refreshContent(selectedTags);
 }
 
 async function initPage() {
@@ -24,7 +24,7 @@ async function initPage() {
   // Convert YAML to JavaScript object
   skeleton = jsyaml.load(yamlSkeleton);
   
-  renderContent();
+  refreshContent();
 
   // Add event listeners to checkboxes for tag filtering
   const filterForm = document.querySelector('.filter');
