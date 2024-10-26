@@ -42,11 +42,7 @@ function buildContent(skeleton, relevantTags = [], headingLevel = 2) {
       
       // If so let's pass an empty array instead of relevant tags.
       // This way each descending terminating nоde will be relevant.
-      let relevantTagsToPass;
-      if (allChildrenRelevant)
-        relevantTagsToPass = [];
-      else
-        relevantTagsToPass = relevantTags;
+      let relevantTagsToPass = allChildrenRelevant ? [] : relevantTags;
 
       // Building body
       const relevantChildren = buildContent(nodeJSON.body,
