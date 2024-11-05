@@ -17,5 +17,9 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "showdown": "^2.1.0"
   }
 }

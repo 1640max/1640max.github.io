@@ -1,5 +1,6 @@
 import { imgCorrection } from "./resizer.js";
 import { buildContent } from "./buildContent.js";
+import { load as toJSON } from 'js-yaml';
 import "./style.scss";
 
 function refreshContent(selectedTags = []) {
@@ -26,7 +27,7 @@ async function initPage() {
   const yamlSkeleton = await response.text();
   
   // Convert YAML to JavaScript object
-  skeleton = jsyaml.load(yamlSkeleton);
+  skeleton = toJSON(yamlSkeleton);
   
   refreshContent();
 }
