@@ -1,3 +1,6 @@
+import { imgCorrection } from "./resizer.js";
+import { buildContent } from "./buildContent.js";
+
 function refreshContent(selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
   contentDiv.innerHTML = ''; // Clear existing content

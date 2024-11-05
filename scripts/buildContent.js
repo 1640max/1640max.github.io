@@ -1,4 +1,6 @@
-function buildContent(skeleton, relevantTags = [], headingLevel = 2) {
+import { converter } from "./initShowdown.js";
+
+export function buildContent(skeleton, relevantTags = [], headingLevel = 2) {
   const result = document.createDocumentFragment();
 
   skeleton.forEach(nodeJSON => {

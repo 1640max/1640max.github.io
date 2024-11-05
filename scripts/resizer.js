@@ -1,4 +1,4 @@
-function imgCorrection(context = document) {
+export function imgCorrection(context = document) {
     const images = context.querySelectorAll('.microcase__img');
     images.forEach((image, count) => {
       // Check if the image is already loaded

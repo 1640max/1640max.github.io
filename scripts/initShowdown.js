@@ -16,7 +16,7 @@ showdown.extension("remove-p-from-img", function () {
 });
 
 // Markdown to HTML converter with extensions and parameters
-var converter = new showdown.Converter({
+export var converter = new showdown.Converter({
   extensions: ["remove-p-from-img"],
   parseImgDimensions: true,
   openLinksInNewWindow: true,
