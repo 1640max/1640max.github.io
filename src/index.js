@@ -1,7 +1,7 @@
 import { imgCorrection } from "./resizer.js";
 import { buildContent } from "./buildContent.js";
-import { load as toJSON } from 'js-yaml';
 import "./style.scss";
+import skeleton from './skeleton.yml';
 
 function refreshContent(selectedTags = []) {
   const contentDiv = document.querySelector('.portfolio');
@@ -22,18 +22,7 @@ function handleTagChange() {
   refreshContent(selectedTags);
 }
 
-async function initPage() {
-  const response = await fetch('/skeleton.yml');
-  const yamlSkeleton = await response.text();
-  
-  // Convert YAML to JavaScript object
-  skeleton = toJSON(yamlSkeleton);
-  
-  refreshContent();
-}
-
-let skeleton;
-initPage();
+refreshContent();
 
 // Add event listeners to checkboxes for tag filtering
 const filterForm = document.querySelector('.filter');
