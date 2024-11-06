@@ -5,7 +5,7 @@ const { merge } = require("webpack-merge");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    filename: "main.[contenthash].js",
+    filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   }
