@@ -423,12 +423,31 @@
 
         Исходники: [github.com/1640max/valensio](https://github.com/1640max/valensio)
       tags: ["Сайт"]
-      body: 
-        - desc:
-          body: "Театр Алехандро, сайт (кроме «О нас»)"
-        - desc:
-          tags: ["Тексты"]
-          body: "Театр Алехандро, страничка «О нас»"
+      body: #TODO: Оформить текст на странице «О нас»
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/gagarin.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/book-club.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/ilya.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-1.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-2.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-3.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-1.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-2.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-3.avif)
 
 - head: Бренд одежды «Nidual»
   desc: "Задача: сделать логотип в цветах бренда, символизирующий тепло и комфорт в любой сезон."
