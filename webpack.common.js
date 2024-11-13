@@ -5,8 +5,11 @@ module.exports = {
   entry: "./src/index.js",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.ejs",
       inject: 'body',
+      templateParameters: {
+        title: "Макс Мальцев — веб-разработчик и дизайнер",
+      },
     }),
     new CopyWebpackPlugin({
       patterns: [
