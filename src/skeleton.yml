@@ -4,6 +4,8 @@
     Задача: задизайнить и сверстать лендинг для детских театральных курсов.
 
     Результат: [teatr-mart.ru](https://teatr-mart.ru)
+
+    Исходники: [github.com/1640max/mart](https://github.com/1640max/mart)
   body:
     - tags: ["Тексты"]
       body: "![Сайт для театральной студии «mART»](cases/mart/website-1.avif)"
@@ -85,7 +87,10 @@
     - head: Персональный сайт с пьесами
       desc: |
         Задача: задизайнить и сверстать многостраничник, написать тексты для интерфейса.
+
         Результат: [vyatkin.su](https://vyatkin.su)
+
+        Исходники: [github.com/1640max/vyatkin](https://github.com/1640max/vyatkin)
       tags: ["Сайт"]
       body:
         - body: >
@@ -204,6 +209,10 @@
       tags: ["Обработка фото"]
       body: "Ваудед, обработка фото" # TODO
     - head: Лендинг
+      desc: |
+        Результат: [wowded.ru](https://wowded.ru)
+
+        Исходники: [github.com/1640max/wowded](https://github.com/1640max/wowded)
       tags: ["Сайт"]
       body:
         - body: "![Сайт для «Вау, дед!»](cases/wowded/site-header.avif)"
@@ -322,6 +331,7 @@
             ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/post-text-5.avif)
             ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/post-text-6.avif)
     - head: Сайт
+      desc: "Результат: [4fats.valensio.com](https://4fats.valensio.com)"
       tags: ["Сайт"]
       body:
         - tags: ["Тексты"]
@@ -341,7 +351,7 @@
 - head: Спектакль «Лёха»
   body:
     - head: Лендинг
-      desc: "Результат: [leha.valensio.com](htps://leha.valensio.com)"
+      desc: "Результат: [leha.valensio.com](https://leha.valensio.com)"
       tags: ["Сайт"]
       body:
         - body: >
@@ -407,12 +417,18 @@
     - desc:
       tags: ["Хайлайтс"]
       body: "Алехандро, кружочки"
-    - desc:
+    - head: Сайт
+      desc: |
+        Результат: [valensio.com](https://valensio.com)
+
+        Исходники: [github.com/1640max/valensio](https://github.com/1640max/valensio)
       tags: ["Сайт"]
-      body: "Театр Алехандро, сайт (кроме «О нас»)"
-    - desc:
-      tags: ["Сайт", "Тексты"]
-      body: "Театр Алехандро, страничка «О нас»"
+      body: 
+        - desc:
+          body: "Театр Алехандро, сайт (кроме «О нас»)"
+        - desc:
+          tags: ["Тексты"]
+          body: "Театр Алехандро, страничка «О нас»"
 
 - head: Бренд одежды «Nidual»
   desc: "Задача: сделать логотип в цветах бренда, символизирующий тепло и комфорт в любой сезон."
@@ -457,6 +473,7 @@
   desc: "Задача: разработать айдентику с нуля, подготовить лендинг и тексты, оформить соцсети"
   body: 
     - head: Лендинг
+      desc: "Результат: [академия-мата.рф](https://академия-мата.рф)"
       tags: ["Сайт"]
       body:
         - body: "![Лендинг для Академии мата Петра Вяткина](cases/mat/website-header-desktop.avif)"
@@ -492,15 +509,18 @@
 
 - head: Исказители
   body:
+    - head: Лендинг
+      desc: "Результат: [kids.valensio.com](https://kids.valensio.com)"
+      tags: ["Сайт"]
+      body: 
+        - desc:
+          body: "Исказители, сайт без текстов"
+        - desc:
+          tags: ["Тексты"]
+          body: "Исказители, сайт с текстами"
     - desc:
       tags: ["Обработка фото"]
       body: "Исказители, обработка фото (как минимум, главная)"
-    - desc:
-      tags: ["Сайт"]
-      body: "Исказители, сайт без текстов"
-    - desc:
-      tags: ["Сайт", "Тексты"]
-      body: "Исказители, сайт с текстами"
 
 - head: Горилла
   body:
@@ -516,9 +536,12 @@
     - desc:
       tags: ["Рекламные креативы"]
       body: "Горилла, Антоха об пол"
-    - desc:
+    - head: Лендинг
+      desc: "Результат: [gorilla.valensio.com](https://gorilla.valensio.com)"
       tags: ["Сайт"]
-      body: "Горилла, сайт без текстов"
-    - desc:
-      tags: ["Сайт", "Тексты"]
-      body: "Горилла, сайт с текстами"
+      body: 
+        - desc:
+          body: "Горилла, сайт без текстов"
+        - desc:
+          tags: ["Тексты"]
+          body: "Горилла, сайт с текстами"
