@@ -19,6 +19,10 @@
   }
 }
 
+.portfolio__description {
+  max-width: 45em;
+}
+
 .portfolio__microcase {
   margin-bottom: var(--microcases-gap);
 }
