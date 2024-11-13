@@ -3,27 +3,46 @@ import { buildContent } from "./buildContent.js";
 import "./style.scss";
 import skeleton from './skeleton.yml';
 
-function refreshContent(selectedTags = []) {
-  const contentDiv = document.querySelector('.portfolio');
-  contentDiv.innerHTML = ''; // Clear existing content
+/**
+ * Расставляет чекбоксы на основе GET-параметра filter
+ */
+function initFilter() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const filterParam = urlParams.get('filter');
 
-  let content = buildContent(skeleton, selectedTags);
-  imgCorrection(content);
-  contentDiv.appendChild(content);
+  if (filterParam) {
+    const filterValues = filterParam.split(',');
+    filterValues.forEach(tag => {
+      const checkbox = document.querySelector(`.filter__input[value="${tag}"]`);
+      if (checkbox) {
+        checkbox.checked = true;
+      }
+    })
+  }
 }
 
-function handleTagChange() {
-  const checkboxes = filterForm.querySelectorAll('.filter__input');
+/**
+ * Обновляет выборку кейсов и GET-параметр filter на основе чекбоксов
+ */
+function refreshContent() {
+  const contentDiv = document.querySelector('.portfolio');
+  contentDiv.innerHTML = '';
+
   const selectedTags = Array.from(checkboxes)
     .filter(checkbox => checkbox.checked)
     .map(checkbox => checkbox.value);
 
-  // Rebuild the page based on selected tags
-  refreshContent(selectedTags);
+  let content = buildContent(skeleton, selectedTags);
+  imgCorrection(content);
+  contentDiv.appendChild(content);
+
+  const filterString = selectedTags.length > 0 ? `?filter=${selectedTags.join(',')}` : '/';
+  window.history.replaceState(null, '', filterString);
 }
 
-refreshContent();
-
-// Add event listeners to checkboxes for tag filtering
 const filterForm = document.querySelector('.filter');
-filterForm.addEventListener("change", handleTagChange);
+const checkboxes = filterForm.querySelectorAll('.filter__input');
+
+initFilter();
+refreshContent();
+filterForm.addEventListener("change", refreshContent);
