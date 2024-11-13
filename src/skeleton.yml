@@ -147,6 +147,49 @@
           body: "![Логотип для анализатора исходного кода «Гамаюн»](cases/gamayun/shortcut.avif)"
         - body: "![Логотип для анализатора исходного кода «Гамаюн»](cases/gamayun/circles.avif)"
 
+- head: Театр Алехандро
+  body:
+    - desc:
+      tags: ["Посты в соцсети", "Рекламные креативы"]
+      body: "Я перестаю дышать, креативы"
+    - desc:
+      tags: ["Сторис"]
+      body: "Бредущая, сториз"
+    - desc:
+      tags: ["Хайлайтс"]
+      body: "Алехандро, кружочки"
+    - head: Сайт
+      desc: |
+        Результат: [valensio.com](https://valensio.com)
+
+        Исходники: [github.com/1640max/valensio](https://github.com/1640max/valensio)
+      tags: ["Сайт"]
+      body: #TODO: Оформить текст на странице «О нас»
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/gagarin.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/book-club.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/ilya.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-desktop.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-1.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-2.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-3.avif)
+        - body: >
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-1.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-2.avif)
+            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-3.avif)
+
 - head: «Вау, дед!» — доставка Деда Мороза и Снегурочки
   desc: |
     Задача: разработать айдентику с нуля; подготовить лендинг и рекламные креативы для нескольких целевых аудиторий.
@@ -405,49 +448,6 @@
         ![Экран с меню в ресторане](cases/coffee-master/Смузи.avif)
         ![Видео-меню для дисплея в кофейне](cases/coffee-master/Каши.avif)
         ![Меню на экране в кафе](cases/coffee-master/Матча.avif)
-
-- head: Театр Алехандро
-  body:
-    - desc:
-      tags: ["Посты в соцсети", "Рекламные креативы"]
-      body: "Я перестаю дышать, креативы"
-    - desc:
-      tags: ["Сторис"]
-      body: "Бредущая, сториз"
-    - desc:
-      tags: ["Хайлайтс"]
-      body: "Алехандро, кружочки"
-    - head: Сайт
-      desc: |
-        Результат: [valensio.com](https://valensio.com)
-
-        Исходники: [github.com/1640max/valensio](https://github.com/1640max/valensio)
-      tags: ["Сайт"]
-      body: #TODO: Оформить текст на странице «О нас»
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/gagarin.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/book-club.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/ilya.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/index-desktop.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/repertoire-desktop.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/about-desktop.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-desktop.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-1.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-2.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/peas-3.avif)
-        - body: >
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-1.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-2.avif)
-            ![Сайт для театра им. Алехандро Валенсио](cases/valensio/dino-3.avif)
 
 - head: Бренд одежды «Nidual»
   desc: "Задача: сделать логотип в цветах бренда, символизирующий тепло и комфорт в любой сезон."
