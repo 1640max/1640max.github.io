@@ -7,8 +7,8 @@ import skeleton from './skeleton.yml';
  * Расставляет чекбоксы на основе GET-параметра filter
  */
 function initFilter() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const filterParam = urlParams.get('filter');
+  const URLParams = new URLSearchParams(window.location.search);
+  const filterParam = URLParams.get('filter');
 
   if (filterParam) {
     const filterValues = filterParam.split(',');
@@ -40,9 +40,9 @@ function refreshContent() {
   window.history.replaceState(null, '', filterString);
 }
 
-const filterForm = document.querySelector('.filter');
-const checkboxes = filterForm.querySelectorAll('.filter__input');
+const filter = document.querySelector('.filter');
+const checkboxes = filter.querySelectorAll('.filter__input');
 
 initFilter();
 refreshContent();
-filterForm.addEventListener("change", refreshContent);
+filter.addEventListener("change", refreshContent);
