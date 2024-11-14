@@ -1,5 +1,5 @@
 - head: Театральная студия «mART»
-  tags: ["Сайт"]
+  tags: ["Сайты"]
   desc: |
     Задача: задизайнить и сверстать лендинг для детских театральных курсов.
 
@@ -91,7 +91,7 @@
         Результат: [vyatkin.su](https://vyatkin.su)
 
         Исходники: [github.com/1640max/vyatkin](https://github.com/1640max/vyatkin)
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body:
         - body: >
             ![Разработка сайта драматурга Петра Вяткина](cases/vyatkin/website-index-desktop.avif)
@@ -136,7 +136,7 @@
     Гамаюн — мифическая птица из русской культуры, которая предвещает беду. К счастью, если разработчик исправит ошибку, то беды не случится.
   body:
     - head: Логотип
-      tags: ["Логотип"]
+      tags: ["Логотипы"]
       body:
         - body: "![Логотип для анализатора исходного кода «Гамаюн»](cases/gamayun/logo-text.avif)"
         - desc: В тело птицы встроены символы `{ / }`, которые часто используются в языках программирования и ассоциируются с разработкой ПО.
@@ -163,7 +163,7 @@
         Результат: [valensio.com](https://valensio.com)
 
         Исходники: [github.com/1640max/valensio](https://github.com/1640max/valensio)
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body: #TODO: Оформить текст на странице «О нас»
         - body: >
             ![Сайт для театра им. Алехандро Валенсио](cases/valensio/gagarin.avif)
@@ -256,7 +256,7 @@
         Результат: [wowded.ru](https://wowded.ru)
 
         Исходники: [github.com/1640max/wowded](https://github.com/1640max/wowded)
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body:
         - body: "![Сайт для «Вау, дед!»](cases/wowded/site-header.avif)"
         - body: "![Сайт для «Вау, дед!»](cases/wowded/website-1.avif)"
@@ -375,7 +375,7 @@
             ![Брендинг для спектакля «Четыре жирных УЁ...»](cases/4fats/post-text-6.avif)
     - head: Сайт
       desc: "Результат: [4fats.valensio.com](https://4fats.valensio.com)"
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body:
         - tags: ["Тексты"]
           body: >
@@ -395,7 +395,7 @@
   body:
     - head: Лендинг
       desc: "Результат: [leha.valensio.com](https://leha.valensio.com)"
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body:
         - body: >
             ![Лендинг для спектакля «Лёха»](cases/leha/website-desktop.avif)
@@ -451,7 +451,7 @@
 
 - head: Бренд одежды «Nidual»
   desc: "Задача: сделать логотип в цветах бренда, символизирующий тепло и комфорт в любой сезон."
-  tags: ["Логотип"]
+  tags: ["Логотипы"]
   body:
     - desc: |
         Первая ассоциация для тепла и комфорта — кошка. Но образ кошки слишком уж заезжен, поэтому взял за основу рысь.
@@ -493,7 +493,7 @@
   body: 
     - head: Лендинг
       desc: "Результат: [академия-мата.рф](https://академия-мата.рф)"
-      tags: ["Сайт"]
+      tags: ["Сайты"]
       body:
         - body: "![Лендинг для Академии мата Петра Вяткина](cases/mat/website-header-desktop.avif)"
         - desc: В первом блоке текста показываю, что такой курс имеет смысл и что владение матом — полноценный навык. Просто о нём редко говорят всерьёз.
