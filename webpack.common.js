@@ -8,7 +8,7 @@ module.exports = {
       template: "./src/index.ejs",
       inject: 'body',
       templateParameters: {
-        title: "Макс Мальцев — веб-разработчик и дизайнер",
+        title: "Макс Мальцев — веб-разработчик, дизайнер информации",
       },
     }),
     new CopyWebpackPlugin({
